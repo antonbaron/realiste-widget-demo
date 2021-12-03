@@ -1,3 +1,23 @@
 body {
   background-color: #fff;
 }
+
+.btn.btn-trade-in {
+  white-space: nowrap;
+  background-image: url("data:image/svg+xml,%3Csvg width='27' height='46' viewBox='0 0 27 46' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M4.88002 0L0.27002 26.45H9.48002L4.88002 46L26.73 18.4H16.38L25.58 0H4.88002Z' fill='%23EFCC00'/%3E%3C/svg%3E%0A");
+  padding: 10px 10px 10px 29px;
+  white-space: nowrap;
+  background-repeat: no-repeat;
+  background-size: 14px;
+  background-position: 9px center;
+}
+
+.header .btn.btn-trade-in {
+  margin-right: 10px;
+}
+
+.realiste-widget-wrap {
+  padding: 20px 20px 0;
+  border-top: 1px solid #eee;
+  scroll-margin: 120px;
+}
