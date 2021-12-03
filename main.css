@@ -12,8 +12,14 @@ body {
   background-position: 9px center;
 }
 
-.btn.btn-realiste-secondary {
+.btn-no-transition {
+  transition: none;
+}
+
+.btn.btn-secondary {
   background-color: #ff671f;
+  padding-right: 30px;
+  padding-left: 30px;
 }
 
 .header .btn.btn-trade-in {
@@ -29,13 +35,13 @@ body {
   background-position: 9px center;
 }
 
-.realiste-widget-wrap {
+.widget-wrap {
   padding: 20px 20px 0;
   border-top: 1px solid #eee;
   scroll-margin: 80px;
 }
 
-.realiste-trade-up-columns {
+.trade-up-columns {
   display: none;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -43,14 +49,50 @@ body {
   max-height: 45rem;
 }
 
-.realiste-trade-up-col img {
+.trade-up-col img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   margin: 0;
 }
 
-.realiste-trade-up-card {
+.trade-up-card {
   background-color: #00263a;
-  padding: 20px;
+  padding: 40px;
+  color: #fff;
+}
+
+.trade-up-card h2 {
+  color: #fff;
+  margin: 0 0 20px;
+  line-height: 1.3;
+}
+
+.trade-up-card .lead {
+  font-size: 18px;
+  line-height: 1.4;
+  margin: 0 0 30px;
+}
+
+@media only screen and (max-width: 1280px) {
+  .trade-up-columns {
+    grid-template-columns: 1fr 1.8fr 1fr;
+  }
+
+  .btn.btn-secondary {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .trade-up-card h2 {
+    font-size: 32px;
+  }
+
+  .trade-up-card .lead {
+    font-size: 16px;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+
 }
