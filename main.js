@@ -6,6 +6,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
   const headerMenuMobileSocial = document.querySelector('.header-menu-mobile__social');
   const head = document.head || document.getElementsByTagName('head')[0];
   const projectsContent = document.querySelector('.projects-content');
+  const projectItemDates = document.querySelectorAll('.project-item__date');
+  let tradeInButtonProjectItemDate;
   
   const tradeUpColumns = document.createElement('div');
   tradeUpColumns.className = 'trade-up-columns';
@@ -61,14 +63,20 @@ document.addEventListener("DOMContentLoaded", function(event) {
   tradeInButton.href = '#realisteWidgetWrap';
   tradeInButton.innerHTML = 'Trade In';
 
-  const tradeInButtonMobile = tradeInButton.cloneNode(true);
+  // const tradeInButtonMobile = tradeInButton.cloneNode(true);
 
   header.insertBefore(tradeInButton, headerIcons);
-  headerMenuMobile.insertBefore(tradeInButtonMobile, headerMenuMobileSocial);
+  // headerMenuMobile.insertBefore(tradeInButtonMobile, headerMenuMobileSocial);
   wrapPage.append(realisteWidgetWrap);
   head.appendChild(realisteWidgetScript);
   head.appendChild(stylesheet);
   projectsContent.append(tradeUpColumns);
+
+  projectItemDates.forEach(el => {
+    console.log(el);
+    tradeInButtonProjectItemDate = tradeInButton.cloneNode(true);
+    el.append(tradeInButtonProjectItemDate);
+  });
 
   smoothScroll();
 

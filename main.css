@@ -15,7 +15,9 @@ html {
   background-size: 14px;
   background-position: 9px center;
   width: 92px;
+  max-width: 92px;
   height: 38px;
+  max-height: 38px;
   box-sizing: border-box;
 }
 
@@ -98,10 +100,6 @@ html {
   .trade-up-card .lead {
     font-size: 16px;
   }
-
-  .widget-wrap {
-    scroll-margin: 60px;
-  }
 }
 
 @media only screen and (max-width: 767px) {
@@ -111,6 +109,41 @@ html {
 
   .widget-wrap {
     padding-right: 0;
-    margin-left: 0;
+    padding-left: 0;
+    scroll-margin: 40px;
+  }
+
+  .trade-up-columns {
+    grid-template-columns: 1fr;
+    grid-gap: 5px;
+    max-height: none;
+    margin: 0 0 -54px;
+  }
+
+  .header .btn.btn-trade-in {
+    padding: 5px 10px 6px 22px;
+    background-size: 7px;
+    width: 89px;
+    height: 30px;
+  }
+
+  .header .btn.btn-trade-in:hover {
+    background-size: 7px;
+  }
+
+  .trade-up-card {
+    padding: 30px 20px;
+  }
+
+  .project-item__date-item + .btn-trade-in {
+    margin-left: -6px;
+  }
+
+  .project-item__date .btn-trade-in {
+    height: 26px;
+    padding: 4px 5px 4px 20px;
+    background-size: 10px;
+    width: auto;
+    border-radius: 4px;
   }
 }
