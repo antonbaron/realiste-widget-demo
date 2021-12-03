@@ -7,6 +7,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
   const head = document.head || document.getElementsByTagName('head')[0];
   const projectsContent = document.querySelector('.projects-content');
   const projectItemDates = document.querySelectorAll('.project-item__date');
+  const projectItemWrap = document.querySelectorAll('.project-item');
   let tradeInButtonProjectItemDate;
   
   const tradeUpColumns = document.createElement('div');
@@ -77,6 +78,10 @@ document.addEventListener("DOMContentLoaded", function(event) {
     tradeInButtonProjectItemDate = tradeInButton.cloneNode(true);
     el.append(tradeInButtonProjectItemDate);
   });
+
+  projectItemWrap.forEach(el => {
+    el.removeAttribute('onclick');
+  })
 
   smoothScroll();
 

@@ -21,10 +21,6 @@ html {
   box-sizing: border-box;
 }
 
-.btn-no-transition {
-  transition: none;
-}
-
 .btn.btn-secondary {
   background-color: #ff671f;
   padding-right: 30px;
