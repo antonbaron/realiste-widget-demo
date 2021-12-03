@@ -102,6 +102,12 @@ html {
   }
 }
 
+@media only screen and (min-width: 768px) {
+  .project-item__date .btn-trade-in {
+    display: none;
+  }
+}
+
 @media only screen and (max-width: 767px) {
   .header .btn.btn-trade-in {
     display: none;
