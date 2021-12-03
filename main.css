@@ -12,12 +12,26 @@ body {
   background-position: 9px center;
 }
 
+.btn.btn-realiste-secondary {
+  background-color: #ff671f;
+}
+
 .header .btn.btn-trade-in {
   margin-right: 10px;
+}
+
+.header .btn.btn-trade-in:hover {
+  background: none;
+  background-color: #fe7635;
+  background-image: url("data:image/svg+xml,%3Csvg width='27' height='46' viewBox='0 0 27 46' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M4.88002 0L0.27002 26.45H9.48002L4.88002 46L26.73 18.4H16.38L25.58 0H4.88002Z' fill='%23EFCC00'/%3E%3C/svg%3E%0A");
 }
 
 .realiste-widget-wrap {
   padding: 20px 20px 0;
   border-top: 1px solid #eee;
   scroll-margin: 120px;
+}
+
+.realiste-trade-up-columns {
+  display: none;
 }
