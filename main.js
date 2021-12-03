@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
   <div class="trade-up-card">
     <h2>Обмен вашей квартиры на&nbsp;новую</h2>
     <p class="lead">Выгодно обменяйте вашу квартиру на новую за 7 дней. Оценка вашей квартиры займет 10 секунд, подбор новой квартиры с минимальной разницей в цене или без доплаты займет 1 минуту.</p>
-    <a href="#realisteWidgetWrap" class="btn-custom btn-secondary scroll-to">Получить предложение за 10 сек</a>
+    <a href="#realisteWidgetWrap" class="btn btn-secondary scroll-to">Получить предложение за 10 сек</a>
   </div>
   <div class="trade-up-col">
     <img src="https://olga-front.github.io/mr-group.widget-demo/images//trade-up-after.jpg" alt="Trade up after">
