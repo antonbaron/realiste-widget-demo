@@ -24,55 +24,22 @@ document.addEventListener("DOMContentLoaded", function(event) {
   const smoothScroll = () => {
     let anchorlinks = document.querySelectorAll('.scroll-to');
 
-    for (const link of anchorlinks) {
-      link.addEventListener('click', clickHandler);
+    for (let item of anchorlinks) {
+      item.addEventListener('click', (e) => {
+        let hashval = item.getAttribute('href');
+
+        let target = document.querySelector(hashval);
+
+        target.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start'
+        });
+
+        history.pushState(null, null, hashval);
+
+        e.preventDefault();
+      })
     }
-
-    function clickHandler(e) {
-      e.preventDefault();
-
-      const href = this.getAttribute("href");
-      const offsetTop = document.querySelector(href).offsetTop;
-
-      scroll({
-        top: offsetTop,
-        behavior: "smooth"
-      });
-    }
-
-    // for (const item of anchorlinks) {
-    //   item.addEventListener('click', (e) => {
-    //     let hashval = item.getAttribute('href');
-
-    //     let target = document.querySelector(hashval);
-
-    //     target.scrollIntoView({
-    //       behavior: 'smooth',
-    //       block: 'start'
-    //     });
-
-    //     history.pushState(null, null, hashval);
-
-    //     e.preventDefault();
-    //   })
-    // }
-
-    // const links = document.querySelectorAll(".page-header ul a");
-
-    // for (const link of links) {
-    //   link.addEventListener("click", clickHandler);
-    // }
-
-    // function clickHandler(e) {
-    //   e.preventDefault();
-    //   const href = this.getAttribute("href");
-    //   const offsetTop = document.querySelector(href).offsetTop;
-
-    //   scroll({
-    //     top: offsetTop,
-    //     behavior: "smooth"
-    //   });
-    // }
   }
 
   const stylesheet = document.createElement('link');
@@ -94,8 +61,10 @@ document.addEventListener("DOMContentLoaded", function(event) {
   tradeInButton.href = '#realisteWidgetWrap';
   tradeInButton.innerHTML = 'Trade In';
 
+  const tradeInButtonMobile = tradeInButton.cloneNode(true);
+
   header.insertBefore(tradeInButton, headerIcons);
-  headerMenuMobile.insertBefore(tradeInButton, headerMenuMobileSocial);
+  headerMenuMobile.insertBefore(tradeInButtonMobile, headerMenuMobileSocial);
   wrapPage.append(realisteWidgetWrap);
   head.appendChild(realisteWidgetScript);
   head.appendChild(stylesheet);

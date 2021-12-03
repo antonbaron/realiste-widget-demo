@@ -2,6 +2,10 @@ body {
   background-color: #fff;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 .btn.btn-trade-in {
   white-space: nowrap;
   background-image: url("data:image/svg+xml,%3Csvg width='27' height='46' viewBox='0 0 27 46' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M4.88002 0L0.27002 26.45H9.48002L4.88002 46L26.73 18.4H16.38L25.58 0H4.88002Z' fill='%23EFCC00'/%3E%3C/svg%3E%0A");
@@ -12,6 +16,7 @@ body {
   background-position: 9px center;
   width: 92px;
   height: 38px;
+  box-sizing: border-box;
 }
 
 .btn-no-transition {
@@ -93,6 +98,10 @@ body {
   .trade-up-card .lead {
     font-size: 16px;
   }
+
+  .widget-wrap {
+    scroll-margin: 60px;
+  }
 }
 
 @media only screen and (max-width: 767px) {
@@ -100,5 +109,8 @@ body {
     display: none;
   }
 
-  
+  .widget-wrap {
+    padding-right: 0;
+    margin-left: 0;
+  }
 }
