@@ -10,6 +10,8 @@ body {
   background-repeat: no-repeat;
   background-size: 14px;
   background-position: 9px center;
+  width: 92px;
+  height: 38px;
 }
 
 .btn-no-transition {
@@ -94,5 +96,9 @@ body {
 }
 
 @media only screen and (max-width: 767px) {
+  .header .btn.btn-trade-in {
+    display: none;
+  }
 
+  
 }
