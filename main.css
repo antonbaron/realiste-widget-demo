@@ -109,14 +109,10 @@ html {
 }
 
 @media only screen and (max-width: 767px) {
-  .header .btn.btn-trade-in {
-    display: none;
-  }
-
   .widget-wrap {
     padding-right: 0;
     padding-left: 0;
-    scroll-margin: 40px;
+    scroll-margin: 20px;
   }
 
   .trade-up-columns {
