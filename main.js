@@ -47,15 +47,11 @@ document.addEventListener("DOMContentLoaded", function(event) {
   tradeInButton.href = '#realisteWidgetWrap';
   tradeInButton.innerHTML = 'Trade In';
 
-  // const tradeInButtonMobile = tradeInButton.cloneNode(true);
-
-  header.insertBefore(tradeInButton, headerIcons);
-  // headerMenuMobile.insertBefore(tradeInButtonMobile, headerMenuMobileSocial);
+  
   wrapPage.append(realisteWidgetWrap);
   head.appendChild(realisteWidgetScript);
   head.appendChild(smoothScrollScript);
   head.appendChild(stylesheet);
-  projectsContent.append(tradeUpColumns);
 
   projectItemDates.forEach(el => {
     console.log(el);
@@ -65,7 +61,16 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
   projectItemWrap.forEach(el => {
     el.removeAttribute('onclick');
-  })
+  });
+
+  initElements = () => {
+    if (stylesheet.length > 0) {
+      projectsContent.append(tradeUpColumns);
+      header.insertBefore(tradeInButton, headerIcons);
+    } else setTimeout(initElements, 100);
+  }
+
+  initElements();
 
   var scroll = new SmoothScroll('a.scroll-to');
 });
