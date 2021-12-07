@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
   const projectItemWrap = document.querySelectorAll('.project-item');
   const menuProjectsTitle = document.querySelector('.menu-project-title');
   const oneProjectRoomTypes = document.querySelector('.one-project__rooms-types');
-  const advantagesWrapper = document.querySelector('#advantagesWrapper');
+  const advantagesWrapper = document.querySelector('.advantagesWrapper');
   let tradeInButtonProjectItemDate;
   
   const tradeUpColumns = document.createElement('div');
