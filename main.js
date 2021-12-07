@@ -9,6 +9,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
   const projectItemDates = document.querySelectorAll('.project-item__date');
   const projectItemWrap = document.querySelectorAll('.project-item');
   const menuProjectsTitle = document.querySelector('.menu-project-title');
+  const oneProjectRoomTypes = document.querySelector('.one-project__rooms-types');
   let tradeInButtonProjectItemDate;
   
   const tradeUpColumns = document.createElement('div');
@@ -70,6 +71,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
     if (stylesheetExists(stylesheet.href)) {
       if (projectsContent) projectsContent.append(tradeUpColumns);
       if (menuProjectsTitle) menuProjectsTitle.innerHTML = '<a href="https://mr-group.realiste.io/#/object-evaluation?locale=ru" target="_blank">Trade In</a>';
+      if (oneProjectRoomTypes) oneProjectRoomTypes.append(tradeUpColumns);
       header.insertBefore(tradeInButton, headerIcons);
     } else setTimeout(initElements, 100);
   }

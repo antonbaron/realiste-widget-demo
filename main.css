@@ -58,6 +58,10 @@ html {
   z-index: 1;
 }
 
+.content + .widget-wrap {
+  scroll-margin: 100px;
+}
+
 .trade-up-columns {
   display: none;
   display: grid;
@@ -111,8 +115,24 @@ html {
 }
 
 @media only screen and (min-width: 768px) {
-  div:not(.one-project-info._desktop) .project-item__date .btn-trade-in {
+  .project-item__date-item + .btn-trade-in {
+    margin-left: -6px;
+  }
+
+  .project-item__date .btn-trade-in {
+    height: 26px;
+    padding: 4px 5px 4px 20px;
+    background-size: 10px;
+    width: auto;
+    border-radius: 4px;
+  }
+
+  .project-item__date .btn-trade-in {
     display: none;
+  }
+
+  .one-project-info._desktop .project-item__date .btn-trade-in {
+    display: inline-block;
   }
 }
 
@@ -147,17 +167,5 @@ html {
 
   .trade-up-card {
     padding: 30px 20px;
-  }
-
-  .project-item__date-item + .btn-trade-in {
-    margin-left: -6px;
-  }
-
-  .project-item__date .btn-trade-in {
-    height: 26px;
-    padding: 4px 5px 4px 20px;
-    background-size: 10px;
-    width: auto;
-    border-radius: 4px;
   }
 }
