@@ -65,56 +65,71 @@ document.addEventListener("DOMContentLoaded", function(event) {
     el.removeAttribute('onclick');
   });
 
-  const linear = (t) => { return t }
-  const scrollElems = document.getElementsByClassName('scroll-to');
-  
-  //console.log(scrollElems);
-  const scrollToElem = (start, stamp, duration, scrollEndElemTop, startScrollOffset) => {
-    //debugger;
-    const runtime = stamp - start;
-    let progress = runtime / duration;
-    const ease = linear(progress);
-    
-    progress = Math.min(progress, 1);
-    console.log(startScrollOffset,startScrollOffset + (scrollEndElemTop * ease));
-    
-    const newScrollOffset = startScrollOffset + (scrollEndElemTop * ease);
-    window.scroll(0, startScrollOffset + (scrollEndElemTop * ease));
+  scrollIt = (destination, duration = 200, easing = 'linear', callback) => {
+    const easings = {
+      linear(t) {
+        return t;
+      }
+    };
 
-    if(runtime < duration){
-      requestAnimationFrame((timestamp) => {
-        const stamp = new Date().getTime();
-        scrollToElem(start, stamp, duration, scrollEndElemTop, startScrollOffset);
-      })
+    const start = window.pageYOffset;
+    const startTime = 'now' in window.performance ? performance.now() : new Date().getTime();
+
+    const documentHeight = Math.max(document.body.scrollHeight, document.body.offsetHeight, document.documentElement.clientHeight, document.documentElement.scrollHeight, document.documentElement.offsetHeight);
+    const windowHeight = window.innerHeight || document.documentElement.clientHeight || document.getElementsByTagName('body')[0].clientHeight;
+    const destinationOffset = typeof destination === 'number' ? destination : destination.offsetTop;
+    const destinationOffsetToScroll = Math.round(documentHeight - destinationOffset < windowHeight ? documentHeight - windowHeight : destinationOffset);
+
+
+    if ('requestAnimationFrame' in window === false) {
+      window.scroll(0, destinationOffsetToScroll);
+      if (callback) {
+        callback();
+      }
+      return;
     }
+
+    scroll = () => {
+      const now = 'now' in window.performance ? performance.now() : new Date().getTime();
+      const time = Math.min(1, ((now - startTime) / duration));
+      const timeFunction = easings[easing](time);
+      window.scroll(0, Math.ceil((timeFunction * (destinationOffsetToScroll - start)) + start));
+
+      if (window.pageYOffset === destinationOffsetToScroll) {
+        if (callback) {
+          callback();
+        }
+        return;
+      }
+
+      requestAnimationFrame(scroll);
+    }
+
+    scroll();
   }
+
+  const scrollElems = document.querySelectorAll('.scroll-to');
 
   initElements = () => {
     if (stylesheetExists(stylesheet.href)) {
       console.log('exist stylesheet');
       projectsContent.append(tradeUpColumns);
       header.insertBefore(tradeInButton, headerIcons);
-
-      for (let i=0; i<scrollElems.length; i++) {
+      
+      for (let i = 0; i < scrollElems.length; i++) {
         const elem = scrollElems[i];
         
         elem.addEventListener('click', (e) => {
           e.preventDefault();
           const scrollElemId = e.target.href.split('#')[1];
           const scrollEndElem = document.getElementById(scrollElemId);
-          
-          const anim = requestAnimationFrame(() => {
-            const stamp = new Date().getTime();
-            const duration = 1200;
-            const start = stamp;
-                
-            const startScrollOffset = window.pageYOffset;
-      
-            const scrollEndElemTop = scrollEndElem.getBoundingClientRect().top;
-                  
-            scrollToElem(start, stamp, duration, scrollEndElemTop, startScrollOffset);
-            // scrollToElem(scrollEndElemTop);
-          })
+
+          scrollIt(
+            scrollEndElem,
+            300,
+            'lineat',
+            () => console.log(`Just finished scrolling to ${window.pageYOffset}px`)
+          );
         })
       }
     } else setTimeout(initElements, 100);
