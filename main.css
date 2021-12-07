@@ -58,8 +58,12 @@ html {
   z-index: 1;
 }
 
-.content + .widget-wrap {
+.page-one-project .widget-wrap {
   scroll-margin: 100px;
+}
+
+.page-tradein .widget-wrap {
+  scroll-margin: 150px;
 }
 
 .trade-up-columns {
@@ -68,6 +72,9 @@ html {
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 1rem;
   max-height: 45rem;
+}
+
+.one-project__rooms-types .trade-up-columns {
   margin: 0 -250px;
 }
 
@@ -148,8 +155,12 @@ html {
     scroll-margin: 20px;
   }
 
-  .content + .widget-wrap {
+  .page-one-project .widget-wrap {
     scroll-margin: 60px;
+  }
+
+  .page-tradein .widget-wrap {
+    scroll-margin: 20px;
   }
 
   .trade-up-columns {
