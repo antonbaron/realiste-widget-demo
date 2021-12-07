@@ -80,7 +80,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
     const destinationOffset = typeof destination === 'number' ? destination : destination.offsetTop;
     const destinationOffsetToScroll = Math.round(documentHeight - destinationOffset < windowHeight ? documentHeight - windowHeight : destinationOffset);
 
-
     if ('requestAnimationFrame' in window === false) {
       window.scroll(0, destinationOffsetToScroll);
       if (callback) {
@@ -120,6 +119,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
         const elem = scrollElems[i];
         
         elem.addEventListener('click', (e) => {
+          console.log('click');
           e.preventDefault();
           const scrollElemId = e.target.href.split('#')[1];
           const scrollEndElem = document.getElementById(scrollElemId);
@@ -127,7 +127,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
           scrollIt(
             scrollEndElem,
             300,
-            'lineat',
+            'linear',
             () => console.log(`Just finished scrolling to ${window.pageYOffset}px`)
           );
         })
