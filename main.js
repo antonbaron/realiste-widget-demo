@@ -74,10 +74,11 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
   initElements = () => {
     if (stylesheetExists(stylesheet.href)) {
+      tradeInButtonCatalogItemInfoTitle = tradeInButton.cloneNode(true);
       if (projectsContent) projectsContent.append(tradeUpColumns);
       if (menuProjectsTitle) menuProjectsTitle.innerHTML = '<a href="https://mr-group.realiste.io/#/object-evaluation?locale=ru" target="_blank">Trade In</a>';
       if (oneProjectRoomTypes) oneProjectRoomTypes.append(tradeUpColumns);
-      if (catalogItemInfoTitle) catalogItemInfoTitle.prepend(tradeInButton);
+      if (catalogItemInfoTitle) catalogItemInfoTitle.prepend(tradeInButtonCatalogItemInfoTitle);
       if (contentText && similarItems) contentText.insertBefore(tradeUpColumns, similarItems);
       console.log(advantagesWrapper);
       if (advantagesWrapper) contentWrapPage.insertBefore(tradeUpColumns, advantagesWrapper);
