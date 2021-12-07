@@ -24,30 +24,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
     <img src="https://olga-front.github.io/mr-group.widget-demo/images//trade-up-after.jpg" alt="Trade up after">
   </div>`;
 
-  const smoothScroll = () => {
-    const anchorlinks = document.querySelectorAll('.scroll-to');
-    anchorlinks.forEach(each => (each.onclick = scrollAnchors));
-  }
-  
-  const scrollAnchors = (e, respond = null) => {
-    const distanceToTop = el => Math.floor(el.getBoundingClientRect().top);
-    e.preventDefault();
-    var targetID = (respond) ? respond.getAttribute('href') : this.getAttribute('href');
-    const targetAnchor = document.querySelector(targetID);
-    if (!targetAnchor) return;
-    const originalTop = distanceToTop(targetAnchor);
-    window.scrollBy({ top: originalTop, left: 0, behavior: 'smooth' });
-    const checkIfDone = setInterval(function() {
-      const atBottom = window.innerHeight + window.pageYOffset >= document.body.offsetHeight - 2;
-      if (distanceToTop(targetAnchor) === 0 || atBottom) {
-        targetAnchor.tabIndex = '-1';
-        targetAnchor.focus();
-        window.history.pushState('', '', targetID);
-        clearInterval(checkIfDone);
-      }
-    }, 100);
-  }
-
   const stylesheet = document.createElement('link');
   stylesheet.type = "text/css";
   stylesheet.rel = "stylesheet";
@@ -56,6 +32,10 @@ document.addEventListener("DOMContentLoaded", function(event) {
   const realisteWidgetScript = document.createElement('script');
   realisteWidgetScript.type = 'text/javascript';
   realisteWidgetScript.src = 'https://script.realiste-widget.ru/widget-init.js';
+
+  const smoothScrollScript = document.createElement('script');
+  smoothScrollScript.type = 'text/javascript';
+  smoothScrollScript.src = 'https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll@15.0/dist/smooth-scroll.polyfills.min.js';
   
   const realisteWidgetWrap = document.createElement('div');
   realisteWidgetWrap.className = 'widget-wrap';
@@ -86,6 +66,5 @@ document.addEventListener("DOMContentLoaded", function(event) {
     el.removeAttribute('onclick');
   })
 
-  smoothScroll();
-
+  var scroll = new SmoothScroll('a.scroll-to');
 });
