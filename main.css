@@ -68,6 +68,7 @@ html {
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 1rem;
   max-height: 45rem;
+  margin: 0 -250px;
 }
 
 .trade-up-col img {
@@ -114,19 +115,19 @@ html {
   }
 }
 
+.project-item__date-item + .btn-trade-in {
+  margin-left: -6px;
+}
+
+.project-item__date .btn-trade-in {
+  height: 26px;
+  padding: 4px 5px 4px 20px;
+  background-size: 10px;
+  width: auto;
+  border-radius: 4px;
+}
+
 @media only screen and (min-width: 768px) {
-  .project-item__date-item + .btn-trade-in {
-    margin-left: -6px;
-  }
-
-  .project-item__date .btn-trade-in {
-    height: 26px;
-    padding: 4px 5px 4px 20px;
-    background-size: 10px;
-    width: auto;
-    border-radius: 4px;
-  }
-
   .project-item__date .btn-trade-in {
     display: none;
   }
@@ -137,6 +138,10 @@ html {
 }
 
 @media only screen and (max-width: 767px) {
+  .one-project-info._desktop .project-item__date {
+    display: inline-block;
+  }
+
   .widget-wrap {
     padding-right: 0;
     padding-left: 0;
@@ -152,6 +157,11 @@ html {
     grid-gap: 5px;
     max-height: none;
     margin: 0 0 -54px;
+  }
+
+  .one-project__rooms-types .trade-up-columns {
+    margin-left: -20px;
+    margin-right: -20px;
   }
 
   .header .btn-custom.btn-trade-in {
