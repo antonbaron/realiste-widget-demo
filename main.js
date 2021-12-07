@@ -58,7 +58,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
   }
 
   const scriptExists = (url) => {
-    return document.querySelectorAll(`src[href="${url}"]`).length > 0;
+    return document.querySelectorAll(`script[src="${url}"]`).length > 0;
   }
   
   projectItemDates.forEach(el => {
@@ -72,6 +72,10 @@ document.addEventListener("DOMContentLoaded", function(event) {
   });
 
   initElements = () => {
+    console.log('stylesheetExists(stylesheet.href)');
+    console.log(stylesheetExists(stylesheet.href));
+    console.log(realisteWidgetScript.src);
+    console.log(scriptExists(realisteWidgetScript.src));
     if (stylesheetExists(stylesheet.href) && scriptExists(smoothScrollScript.src)) {
       console.log('exist stylesheet');
       projectsContent.append(tradeUpColumns);
