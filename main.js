@@ -65,29 +65,28 @@ document.addEventListener("DOMContentLoaded", function(event) {
     el.removeAttribute('onclick');
   });
 
-  const scrollTo = (element, to, duration) => {
-    let start = element.offsetTop
-    let change = to - start
-    let currentTime = 0
-    let increment = 20;
+  const easeInCubic = (t) => { return t*t*t } 
+  const scrollElems = document.getElementsByClassName('scroll-to');
+  
+  //console.log(scrollElems);
+  const scrollToElem = (start, stamp, duration, scrollEndElemTop, startScrollOffset) => {
+    //debugger;
+    const runtime = stamp - start;
+    let progress = runtime / duration;
+    const ease = easeInCubic(progress);
+    
+    progress = Math.min(progress, 1);
+    console.log(startScrollOffset,startScrollOffset + (scrollEndElemTop * ease));
+    
+    const newScrollOffset = startScrollOffset + (scrollEndElemTop * ease);
+    window.scroll(0, startScrollOffset + (scrollEndElemTop * ease));
 
-    const animateScroll = () => {
-      currentTime += increment;
-      const val = easeInOutQuad(currentTime, start, change, duration);
-      element.scrollTop = val;
-      if (currentTime < duration) {
-        setTimeout(animateScroll, increment);
-      }
+    if(runtime < duration){
+      requestAnimationFrame((timestamp) => {
+        const stamp = new Date().getTime();
+        scrollToElem(start, stamp, duration, scrollEndElemTop, startScrollOffset);
+      })
     }
-
-    animateScroll()
-  }
-
-  const easeInOutQuad = (t, b, c, d) => {
-    t /= d / 2
-    if (t < 1) return c / 2 * t * t + b
-    t--
-    return -c / 2 * (t * (t - 2) - 1) + b
   }
 
   initElements = () => {
@@ -96,15 +95,28 @@ document.addEventListener("DOMContentLoaded", function(event) {
       projectsContent.append(tradeUpColumns);
       header.insertBefore(tradeInButton, headerIcons);
 
-      document.querySelectorAll('.scroll-to').forEach(anchor => {
-        anchor.onclick = (e) => {
-          e.preventDefault()
-          const href = anchor.getAttribute('href')
-          const target = document.querySelector(href)
-          const to = target.offsetTop
-          scrollTo(document.documentElement, to, 2000)
-        }
-      })
+      for (let i=0; i<scrollElems.length; i++) {
+        const elem = scrollElems[i];
+        
+        elem.addEventListener('click', (e) => {
+          e.preventDefault();
+          const scrollElemId = e.target.href.split('#')[1];
+          const scrollEndElem = document.getElementById(scrollElemId);
+          
+          const anim = requestAnimationFrame(() => {
+            const stamp = new Date().getTime();
+            const duration = 1200;
+            const start = stamp;
+                
+            const startScrollOffset = window.pageYOffset;
+      
+            const scrollEndElemTop = scrollEndElem.getBoundingClientRect().top;
+                  
+            scrollToElem(start, stamp, duration, scrollEndElemTop, startScrollOffset);
+            // scrollToElem(scrollEndElemTop);
+          })
+        })
+      }
     } else setTimeout(initElements, 100);
   }
 
