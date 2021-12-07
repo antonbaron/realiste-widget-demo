@@ -53,6 +53,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
   // headerMenuMobile.insertBefore(tradeInButtonMobile, headerMenuMobileSocial);
   wrapPage.append(realisteWidgetWrap);
   head.appendChild(realisteWidgetScript);
+  head.appendChild(smoothScrollScript);
   head.appendChild(stylesheet);
   projectsContent.append(tradeUpColumns);
 
