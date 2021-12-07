@@ -69,7 +69,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
   initElements = () => {
     if (stylesheetExists(stylesheet.href)) {
       if (projectsContent) projectsContent.append(tradeUpColumns);
-      if (menuProjectsTitle) menuProjectsTitle.innerHTML = '<a href="https://mr-group.realiste.io/#/object-evaluation?locale=ru">Trade In</a>';
+      if (menuProjectsTitle) menuProjectsTitle.innerHTML = '<a href="https://mr-group.realiste.io/#/object-evaluation?locale=ru" target="_blank">Trade In</a>';
       header.insertBefore(tradeInButton, headerIcons);
     } else setTimeout(initElements, 100);
   }

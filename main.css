@@ -54,6 +54,8 @@ html {
   padding: 20px 20px 0;
   border-top: 1px solid #eee;
   scroll-margin: 80px;
+  position: relative;
+  z-index: 1;
 }
 
 .trade-up-columns {
@@ -109,7 +111,7 @@ html {
 }
 
 @media only screen and (min-width: 768px) {
-  .project-item__date .btn-trade-in {
+  div:not(.one-project-info._desktop) .project-item__date .btn-trade-in {
     display: none;
   }
 }
@@ -119,6 +121,10 @@ html {
     padding-right: 0;
     padding-left: 0;
     scroll-margin: 20px;
+  }
+
+  .content + .widget-wrap {
+    scroll-margin: 60px;
   }
 
   .trade-up-columns {
