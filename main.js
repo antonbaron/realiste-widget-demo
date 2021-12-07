@@ -65,7 +65,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
     el.removeAttribute('onclick');
   });
 
-  const easeInCubic = (t) => { return t*t*t } 
+  const linear = (t) => { return t }
   const scrollElems = document.getElementsByClassName('scroll-to');
   
   //console.log(scrollElems);
@@ -73,7 +73,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
     //debugger;
     const runtime = stamp - start;
     let progress = runtime / duration;
-    const ease = easeInCubic(progress);
+    const ease = linear(progress);
     
     progress = Math.min(progress, 1);
     console.log(startScrollOffset,startScrollOffset + (scrollEndElemTop * ease));
