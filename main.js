@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", function(event) {
   const wrapPage = document.querySelector('.wrap-page');
+  const contentWrapPage = document.querySelector('.content.wrap-page');
   const header = document.querySelector('.header.js-header');
   const headerIcons = document.querySelector('.header__icons');
   const headerMenuMobile = document.querySelector('.header-menu-mobile');
@@ -73,7 +74,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
       if (projectsContent) projectsContent.append(tradeUpColumns);
       if (menuProjectsTitle) menuProjectsTitle.innerHTML = '<a href="https://mr-group.realiste.io/#/object-evaluation?locale=ru" target="_blank">Trade In</a>';
       if (oneProjectRoomTypes) oneProjectRoomTypes.append(tradeUpColumns);
-      if (advantagesWrapper) wrapPage.insertBefore(tradeUpColumns, advantagesWrapper);
+      console.log(advantagesWrapper);
+      if (advantagesWrapper) contentWrapPage.insertBefore(tradeUpColumns, advantagesWrapper);
       header.insertBefore(tradeInButton, headerIcons);
     } else setTimeout(initElements, 100);
   }
