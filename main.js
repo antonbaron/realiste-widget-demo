@@ -53,6 +53,14 @@ document.addEventListener("DOMContentLoaded", function(event) {
   head.appendChild(smoothScrollScript);
   head.appendChild(stylesheet);
 
+  const stylesheetExists = (url) => {
+    return document.querySelectorAll(`link[href="${url}"]`).length > 0;
+  }
+
+  const scriptExists = (url) => {
+    return document.querySelectorAll(`src[href="${url}"]`).length > 0;
+  }
+  
   projectItemDates.forEach(el => {
     console.log(el);
     tradeInButtonProjectItemDate = tradeInButton.cloneNode(true);
@@ -64,13 +72,13 @@ document.addEventListener("DOMContentLoaded", function(event) {
   });
 
   initElements = () => {
-    if (stylesheet.length > 0) {
+    if (stylesheetExists(stylesheet.href) && scriptExists(smoothScrollScript.src)) {
+      console.log('exist stylesheet');
       projectsContent.append(tradeUpColumns);
       header.insertBefore(tradeInButton, headerIcons);
+      const scroll = new SmoothScroll('a.scroll-to');
     } else setTimeout(initElements, 100);
   }
 
   initElements();
-
-  var scroll = new SmoothScroll('a.scroll-to');
 });
