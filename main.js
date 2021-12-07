@@ -65,73 +65,11 @@ document.addEventListener("DOMContentLoaded", function(event) {
     el.removeAttribute('onclick');
   });
 
-  scrollIt = (destination, duration = 200, easing = 'linear', callback) => {
-    const easings = {
-      linear(t) {
-        return t;
-      }
-    };
-
-    const start = window.pageYOffset;
-    const startTime = 'now' in window.performance ? performance.now() : new Date().getTime();
-
-    const documentHeight = Math.max(document.body.scrollHeight, document.body.offsetHeight, document.documentElement.clientHeight, document.documentElement.scrollHeight, document.documentElement.offsetHeight);
-    const windowHeight = window.innerHeight || document.documentElement.clientHeight || document.getElementsByTagName('body')[0].clientHeight;
-    const destinationOffset = typeof destination === 'number' ? destination : destination.offsetTop;
-    const destinationOffsetToScroll = Math.round(documentHeight - destinationOffset < windowHeight ? documentHeight - windowHeight : destinationOffset);
-
-    if ('requestAnimationFrame' in window === false) {
-      window.scroll(0, destinationOffsetToScroll);
-      if (callback) {
-        callback();
-      }
-      return;
-    }
-
-    scroll = () => {
-      const now = 'now' in window.performance ? performance.now() : new Date().getTime();
-      const time = Math.min(1, ((now - startTime) / duration));
-      const timeFunction = easings[easing](time);
-      window.scroll(0, Math.ceil((timeFunction * (destinationOffsetToScroll - start)) + start));
-
-      if (window.pageYOffset === destinationOffsetToScroll) {
-        if (callback) {
-          callback();
-        }
-        return;
-      }
-
-      requestAnimationFrame(scroll);
-    }
-
-    scroll();
-  }
-
-  const scrollElems = document.querySelectorAll('.scroll-to');
-
   initElements = () => {
     if (stylesheetExists(stylesheet.href)) {
       console.log('exist stylesheet');
       projectsContent.append(tradeUpColumns);
       header.insertBefore(tradeInButton, headerIcons);
-      
-      for (let i = 0; i < scrollElems.length; i++) {
-        const elem = scrollElems[i];
-        
-        elem.addEventListener('click', (e) => {
-          console.log('click');
-          e.preventDefault();
-          const scrollElemId = e.target.href.split('#')[1];
-          const scrollEndElem = document.getElementById(scrollElemId);
-
-          scrollIt(
-            scrollEndElem,
-            300,
-            'linear',
-            () => console.log(`Just finished scrolling to ${window.pageYOffset}px`)
-          );
-        })
-      }
     } else setTimeout(initElements, 100);
   }
 
