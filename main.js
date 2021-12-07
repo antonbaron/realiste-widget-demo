@@ -32,10 +32,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
   const realisteWidgetScript = document.createElement('script');
   realisteWidgetScript.type = 'text/javascript';
   realisteWidgetScript.src = 'https://script.realiste-widget.ru/widget-init.js';
-
-  const smoothScrollScript = document.createElement('script');
-  smoothScrollScript.type = 'text/javascript';
-  smoothScrollScript.src = 'https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll@15.0/dist/smooth-scroll.polyfills.min.js';
   
   const realisteWidgetWrap = document.createElement('div');
   realisteWidgetWrap.className = 'widget-wrap';
@@ -47,10 +43,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
   tradeInButton.href = '#realisteWidgetWrap';
   tradeInButton.innerHTML = 'Trade In';
 
-  
   wrapPage.append(realisteWidgetWrap);
   head.appendChild(realisteWidgetScript);
-  head.appendChild(smoothScrollScript);
   head.appendChild(stylesheet);
 
   const stylesheetExists = (url) => {
@@ -71,16 +65,46 @@ document.addEventListener("DOMContentLoaded", function(event) {
     el.removeAttribute('onclick');
   });
 
+  const scrollTo = (element, to, duration) => {
+    let start = element.offsetTop
+    let change = to - start
+    let currentTime = 0
+    let increment = 20;
+
+    const animateScroll = () => {
+      currentTime += increment;
+      const val = easeInOutQuad(currentTime, start, change, duration);
+      element.scrollTop = val;
+      if (currentTime < duration) {
+        setTimeout(animateScroll, increment);
+      }
+    }
+
+    animateScroll()
+  }
+
+  const easeInOutQuad = (t, b, c, d) => {
+    t /= d / 2
+    if (t < 1) return c / 2 * t * t + b
+    t--
+    return -c / 2 * (t * (t - 2) - 1) + b
+  }
+
   initElements = () => {
-    console.log('stylesheetExists(stylesheet.href)');
-    console.log(stylesheetExists(stylesheet.href));
-    console.log(realisteWidgetScript.src);
-    console.log(scriptExists(realisteWidgetScript.src));
-    if (stylesheetExists(stylesheet.href) && scriptExists(smoothScrollScript.src)) {
+    if (stylesheetExists(stylesheet.href)) {
       console.log('exist stylesheet');
       projectsContent.append(tradeUpColumns);
       header.insertBefore(tradeInButton, headerIcons);
-      const scroll = new SmoothScroll('a.scroll-to');
+
+      document.querySelectorAll('.scroll-to').forEach(anchor => {
+        anchor.onclick = (e) => {
+          e.preventDefault()
+          const href = anchor.getAttribute('href')
+          const target = document.querySelector(href)
+          const to = target.offsetTop
+          scrollTo(document.documentElement, to, 2000)
+        }
+      })
     } else setTimeout(initElements, 100);
   }
 
