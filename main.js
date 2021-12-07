@@ -67,8 +67,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
   initElements = () => {
     if (stylesheetExists(stylesheet.href)) {
-      console.log('exist stylesheet');
-      projectsContent.append(tradeUpColumns);
+      if (projectsContent.length) projectsContent.append(tradeUpColumns);
       header.insertBefore(tradeInButton, headerIcons);
     } else setTimeout(initElements, 100);
   }
