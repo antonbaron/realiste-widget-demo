@@ -58,6 +58,11 @@ html {
   z-index: 1;
 }
 
+.widget-wrap.raiffeisen {
+  padding: 0;
+  border: 0;
+}
+
 .widget-wrap.raiffeisen iframe{
   margin-bottom: 0 !important;
 }
