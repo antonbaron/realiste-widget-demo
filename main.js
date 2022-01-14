@@ -83,6 +83,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
   const initElementsRaiffeisen = () => {
     console.log('https://raiffeisen.widget-demo.realiste.io');
+    document.body.innerHTML = document.body.innerHTML.replace(/Райффайзен/g, "");
 
     if (stylesheetExists(stylesheet.href)) {
       const calcContainer = document.querySelector('#calc.b-page-heading.container');
@@ -96,10 +97,9 @@ document.addEventListener("DOMContentLoaded", function(event) {
       
       realisteWidgetWrap.innerHTML = `<div class="b-block-text container">
         <h2 class="e-title e-title--h2">Купить и обменять Вашу квартиру</h2>
-        <div id="realisteWidget" data-widget="https://raiffeisen.realiste.io/"></div>
+        <div id="realisteWidget" data-widget="https://raiffeisen.realiste.io/trade-up"></div>
       </div>`;
 
-      document.body.innerHTML = document.body.innerHTML.replace(/Райффайзен/g, "");
       btnIntroBtn.href = '#realisteWidgetWrap';
       btnIntroBtn.innerHTML = 'Рассчитать условия по Trade In';
       headerLogo.style.display = 'none';
