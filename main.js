@@ -121,7 +121,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
     initElementsMrGroup();
   } else if (window.location.origin == 'https://raiffeisen.widget-demo.realiste.io') {
     initElementsRaiffeisen();
-  } else if (window.location.origin == 'https://scor.widget-demo.realiste.io/') {
+  } else if (window.location.origin == 'https://scor.widget-demo.realiste.io') {
     initElementsScor();
   }
 });
