@@ -58,15 +58,6 @@ html {
   z-index: 1;
 }
 
-.widget-wrap.raiffeisen {
-  padding: 0;
-  border: 0;
-}
-
-.widget-wrap.raiffeisen iframe{
-  margin-bottom: 0 !important;
-}
-
 .page-one-project .widget-wrap {
   scroll-margin: 100px;
 }
@@ -169,19 +160,6 @@ html {
     scroll-margin: 20px;
   }
 
-  .widget-wrap.raiffeisen iframe{
-    border-radius: 0 !important;
-  }
-
-  .widget-wrap.raiffeisen .e-title--h2 {
-    padding-left: 15px;
-    padding-right: 15px;
-  }
-  
-  .widget-wrap.raiffeisen {
-    margin: 0 -15px;
-  }
-
   .page-one-project .widget-wrap {
     scroll-margin: 60px;
   }
@@ -221,5 +199,34 @@ html {
 
   .trade-up-card {
     padding: 30px 20px;
+  }
+}
+
+/* raiffeisen.widget-demo styles */
+.b-intro__block-buttons .btn-text {
+  margin-left: 0;
+}
+
+.widget-wrap.raiffeisen {
+  padding: 0;
+  border: 0;
+}
+
+.widget-wrap.raiffeisen iframe{
+  margin-bottom: 0 !important;
+}
+
+@media only screen and (max-width: 767px) {
+  .widget-wrap.raiffeisen iframe{
+    border-radius: 0 !important;
+  }
+
+  .widget-wrap.raiffeisen .e-title--h2 {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  
+  .widget-wrap.raiffeisen {
+    margin: 0 -15px;
   }
 }
