@@ -58,6 +58,10 @@ html {
   z-index: 1;
 }
 
+.widget-wrap.raiffeisen iframe{
+  margin-bottom: 0 !important;
+}
+
 .page-one-project .widget-wrap {
   scroll-margin: 100px;
 }
@@ -158,6 +162,19 @@ html {
     padding-right: 0;
     padding-left: 0;
     scroll-margin: 20px;
+  }
+
+  .widget-wrap.raiffeisen iframe{
+    border-radius: 0 !important;
+  }
+
+  .widget-wrap.raiffeisen .e-title--h2 {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  
+  .widget-wrap.raiffeisen {
+    margin: 0 -15px;
   }
 
   .page-one-project .widget-wrap {

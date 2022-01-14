@@ -1,21 +1,5 @@
 document.addEventListener("DOMContentLoaded", function(event) {
-  const wrapPage = document.querySelector('.wrap-page');
-  const contentWrapPage = document.querySelector('.content.wrap-page');
-  const contentText = document.querySelector('.content .text');
-  const header = document.querySelector('.header.js-header');
-  const headerIcons = document.querySelector('.header__icons');
-  const headerMenuMobile = document.querySelector('.header-menu-mobile');
-  const headerMenuMobileSocial = document.querySelector('.header-menu-mobile__social');
   const head = document.head || document.getElementsByTagName('head')[0];
-  const projectsContent = document.querySelector('.projects-content');
-  const projectItemDates = document.querySelectorAll('.project-item__date');
-  const projectItemWrap = document.querySelectorAll('.project-item');
-  const menuProjectsTitle = document.querySelector('.menu-project-title');
-  const oneProjectRoomTypes = document.querySelector('.one-project__rooms-types');
-  const advantagesWrapper = document.querySelector('.advantagesWrapper');
-  const catalogItemInfoTitle = document.querySelector('.catalog-item-info__title');
-  const similarItems = document.querySelector('.similar-items-wrap');
-  let tradeInButtonProjectItemDate;
   
   const tradeUpColumns = document.createElement('div');
   tradeUpColumns.className = 'trade-up-columns';
@@ -39,18 +23,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
   const realisteWidgetScript = document.createElement('script');
   realisteWidgetScript.type = 'text/javascript';
   realisteWidgetScript.src = 'https://script.realiste-widget.ru/widget-init.js';
-  
-  const realisteWidgetWrap = document.createElement('div');
-  realisteWidgetWrap.className = 'widget-wrap';
-  realisteWidgetWrap.id = 'realisteWidgetWrap';
-  realisteWidgetWrap.innerHTML = '<div id="realisteWidget" data-widget="https://mr-group.realiste.io/#/"></div>';
 
-  const tradeInButton = document.createElement('a');
-  tradeInButton.className = 'btn-custom btn-trade-in scroll-to';
-  tradeInButton.href = '#realisteWidgetWrap';
-  tradeInButton.innerHTML = 'Trade In';
-
-  wrapPage.append(realisteWidgetWrap);
   head.appendChild(realisteWidgetScript);
   head.appendChild(stylesheet);
 
@@ -58,21 +31,44 @@ document.addEventListener("DOMContentLoaded", function(event) {
     return document.querySelectorAll(`link[href="${url}"]`).length > 0;
   }
 
-  const scriptExists = (url) => {
-    return document.querySelectorAll(`script[src="${url}"]`).length > 0;
-  }
+  const initElementsMrGroup = () => {
+    const wrapPage = document.querySelector('.wrap-page');
+    const contentWrapPage = document.querySelector('.content.wrap-page');
+    const contentText = document.querySelector('.content .text');
+    const header = document.querySelector('.header.js-header');
+    const headerIcons = document.querySelector('.header__icons');
+    const projectsContent = document.querySelector('.projects-content');
+    const projectItemDates = document.querySelectorAll('.project-item__date');
+    const projectItemWrap = document.querySelectorAll('.project-item');
+    const menuProjectsTitle = document.querySelector('.menu-project-title');
+    const oneProjectRoomTypes = document.querySelector('.one-project__rooms-types');
+    const advantagesWrapper = document.querySelector('.advantagesWrapper');
+    const catalogItemInfoTitle = document.querySelector('.catalog-item-info__title');
+    const similarItems = document.querySelector('.similar-items-wrap');
+    let tradeInButtonProjectItemDate;
+
+    const realisteWidgetWrap = document.createElement('div');
+    realisteWidgetWrap.className = 'widget-wrap';
+    realisteWidgetWrap.id = 'realisteWidgetWrap';
+    realisteWidgetWrap.innerHTML = '<div id="realisteWidget" data-widget="https://mr-group.realiste.io/"></div>';
+
+    const tradeInButton = document.createElement('a');
+    tradeInButton.className = 'btn-custom btn-trade-in scroll-to';
+    tradeInButton.href = '#realisteWidgetWrap';
+    tradeInButton.innerHTML = 'Trade In';
+
+    wrapPage.append(realisteWidgetWrap);
   
-  projectItemDates.forEach(el => {
-    console.log(el);
-    tradeInButtonProjectItemDate = tradeInButton.cloneNode(true);
-    el.append(tradeInButtonProjectItemDate);
-  });
+    projectItemDates.forEach(el => {
+      console.log(el);
+      tradeInButtonProjectItemDate = tradeInButton.cloneNode(true);
+      el.append(tradeInButtonProjectItemDate);
+    });
+  
+    projectItemWrap.forEach(el => {
+      el.removeAttribute('onclick');
+    });
 
-  projectItemWrap.forEach(el => {
-    el.removeAttribute('onclick');
-  });
-
-  initElements = () => {
     if (stylesheetExists(stylesheet.href)) {
       tradeInButtonCatalogItemInfoTitle = tradeInButton.cloneNode(true);
       if (projectsContent) projectsContent.append(tradeUpColumns);
@@ -80,11 +76,34 @@ document.addEventListener("DOMContentLoaded", function(event) {
       if (oneProjectRoomTypes) oneProjectRoomTypes.append(tradeUpColumns);
       if (catalogItemInfoTitle) catalogItemInfoTitle.prepend(tradeInButtonCatalogItemInfoTitle);
       if (contentText && similarItems) contentText.insertBefore(tradeUpColumns, similarItems);
-      console.log(advantagesWrapper);
       if (advantagesWrapper) contentWrapPage.insertBefore(tradeUpColumns, advantagesWrapper);
       header.insertBefore(tradeInButton, headerIcons);
-    } else setTimeout(initElements, 100);
+    } else setTimeout(initElementsMrGroup, 100);
   }
 
-  initElements();
+  const initElementsRaiffeisen = () => {
+    console.log('https://raiffeisen.widget-demo.realiste.io');
+
+    if (stylesheetExists(stylesheet.href)) {
+      const calcContainer = document.querySelector('#calc.b-page-heading.container');
+      const bodyContainer = document.querySelector('.body-container');
+
+      const realisteWidgetWrap = document.createElement('div');
+      realisteWidgetWrap.className = 'widget-wrap raiffeisen';
+      realisteWidgetWrap.id = 'realisteWidgetWrap';
+      
+      realisteWidgetWrap.innerHTML = `<div class="b-block-text container">
+        <h2 class="e-title e-title--h2">Купить и обменять Вашу квартиру</h2>
+        <div id="realisteWidget" data-widget="https://public.realiste.io/"></div>
+      </div>`;
+
+      if (calcContainer) bodyContainer.insertBefore(realisteWidgetWrap, calcContainer);
+    } else setTimeout(initElementsRaiffeisen, 100);
+  }
+
+  if (window.location.origin == 'https://mr-group.widget-demo.realiste.io') {
+    initElementsMrGroup();
+  } else if (window.location.origin == 'https://raiffeisen.widget-demo.realiste.io') {
+    initElementsRaiffeisen();
+  }
 });
