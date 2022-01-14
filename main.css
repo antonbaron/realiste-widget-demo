@@ -216,7 +216,20 @@ html {
   margin-bottom: 0 !important;
 }
 
+/* scor.widget-demo styles */
+.widget-wrap.scor {
+  padding: 0;
+  border: 0;
+}
+
+.widget-wrap.scor iframe{
+  border-radius: 30px !important;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+
 @media only screen and (max-width: 767px) {
+  /* raiffeisen.widget-demo styles */
   .widget-wrap.raiffeisen iframe{
     border-radius: 0 !important;
   }
@@ -228,5 +241,10 @@ html {
   
   .widget-wrap.raiffeisen {
     margin: 0 -15px;
+  }
+
+  /* scor.widget-demo styles */
+  .widget-wrap.scor iframe{
+    border-radius: 0 !important;
   }
 }

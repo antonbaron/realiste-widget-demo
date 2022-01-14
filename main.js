@@ -82,7 +82,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
   }
 
   const initElementsRaiffeisen = () => {
-    console.log('https://raiffeisen.widget-demo.realiste.io');
     document.body.innerHTML = document.body.innerHTML.replace(/Райффайзен/g, "");
 
     if (stylesheetExists(stylesheet.href)) {
@@ -108,9 +107,21 @@ document.addEventListener("DOMContentLoaded", function(event) {
     } else setTimeout(initElementsRaiffeisen, 100);
   }
 
+  const initElementsScor = () => {
+    if (stylesheetExists(stylesheet.href)) {
+      const formWrap = document.querySelector('.right_oCgtn');
+
+      if (formWrap) formWrap.innerHTML = `<div class="widget-wrap scor" id="realisteWidgetWrap">
+        <div id="realisteWidget" data-widget="https://samolet.realiste.io/"></div>
+      </div>`;
+    } else setTimeout(initElementsScor, 100);
+  }
+
   if (window.location.origin == 'https://mr-group.widget-demo.realiste.io') {
     initElementsMrGroup();
   } else if (window.location.origin == 'https://raiffeisen.widget-demo.realiste.io') {
     initElementsRaiffeisen();
+  } else if (window.location.origin == 'https://scor.ru') {
+    initElementsScor();
   }
 });
