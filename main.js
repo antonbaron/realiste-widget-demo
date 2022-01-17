@@ -112,7 +112,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
       const formWrap = document.querySelector('.right_oCgtn');
 
       if (formWrap) formWrap.innerHTML = `<div class="widget-wrap scor" id="realisteWidgetWrap">
-        <div id="realisteWidget" data-widget="https://samolet.realiste.io/"></div>
+        <div id="realisteWidget" data-widget="https://scor.realiste.io/"></div>
       </div>`;
     } else setTimeout(initElementsScor, 100);
   }
