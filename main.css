@@ -228,6 +228,20 @@ html {
   margin-bottom: 0 !important;
 }
 
+/* alfabank.widget-demo styles */
+.widget-wrap.alfabank {
+  text-align: center;
+  border-top: 0;
+  padding-top: 60px;
+}
+
+.widget-wrap.alfabank .widget-wrap-title {
+  font-size: 30px;
+  line-height: 36px;
+  font-weight: 500;
+  margin: 0px 0 30px;
+}
+
 @media only screen and (max-width: 767px) {
   /* raiffeisen.widget-demo styles */
   .widget-wrap.raiffeisen iframe{
@@ -246,5 +260,18 @@ html {
   /* scor.widget-demo styles */
   .widget-wrap.scor iframe{
     border-radius: 0 !important;
+  }
+
+  /* alfabank.widget-demo styles */
+  .widget-wrap.alfabank{
+    padding-top: 0;
+  }
+
+  .widget-wrap.alfabank .widget-wrap-title {
+    font-size: 22px;
+    line-height: 26px;
+    margin: 0 0 20px;
+    padding: 0 15px;
+    text-align: left;
   }
 }
