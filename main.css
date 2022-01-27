@@ -242,7 +242,7 @@ html {
   margin: 0px 0 30px;
 }
 
-.widget-wrap.alfabank .realiste-widget-btn {
+.realiste-widget-btn {
   position: relative;
   display: inline-block;
   border: 0;
@@ -263,7 +263,7 @@ html {
   -webkit-box-sizing: border-box;
 }
 
-.widget-wrap.alfabank .realiste-widget-btn:hover {
+.realiste-widget-btn:hover {
   background: rgba(11,31,53,.15);
 }
 
