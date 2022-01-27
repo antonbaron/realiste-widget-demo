@@ -10,7 +10,7 @@ import { stylesheet, stylesheetExists, detectMobile, findAndReplaceText } from '
 
 const pageIsLoaded = (partnerName) => constants.PARTNERS[partnerName].some(el => window.location.origin == el);
 
-(function() {
+document.addEventListener("DOMContentLoaded", function() {
   
   if (pageIsLoaded('MR_GROUP')) {
     console.log('MR_GROUP');
