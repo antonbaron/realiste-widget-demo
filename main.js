@@ -45,6 +45,26 @@
     })(navigator.userAgent || navigator.vendor || window.opera);
     return checkRes;
   };
+  var nativeSelector = () => {
+    let elements = document.querySelectorAll("body, body *");
+    let results = [];
+    let child;
+    for (var i = 0; i < elements.length; i++) {
+      child = elements[i].childNodes[0];
+      if (elements[i].hasChildNodes() && child.nodeType == 3) {
+        results.push(child);
+      }
+    }
+    return results;
+  };
+  var findAndReplaceText = (from, to) => {
+    let textnodes = nativeSelector();
+    let _nv;
+    for (let i = 0, len = textnodes.length; i < len; i++) {
+      _nv = textnodes[i].nodeValue;
+      textnodes[i].nodeValue = _nv.replace(from, to);
+    }
+  };
 
   // js/modules/mr-group.js
   var tradeUpColumns = document.createElement("div");
@@ -113,7 +133,7 @@
   var mr_group_default = initElementsMrGroup;
 
   // js/modules/raiffeisen.js
-  var initElementsRaiffeisen2 = () => {
+  var initElementsRaiffeisen = () => {
     document.body.innerHTML = document.body.innerHTML.replace(/Райффайзен/g, "");
     if (stylesheetExists(stylesheet.href)) {
       const calcContainer = document.querySelector("#calc.b-page-heading.container");
@@ -133,9 +153,9 @@
       if (calcContainer)
         bodyContainer.insertBefore(realisteWidgetWrap, calcContainer);
     } else
-      setTimeout(initElementsRaiffeisen2, 100);
+      setTimeout(initElementsRaiffeisen, 100);
   };
-  var raiffeisen_default = initElementsRaiffeisen2;
+  var raiffeisen_default = initElementsRaiffeisen;
 
   // js/modules/scor.js
   var initElementsScor = () => {
@@ -152,22 +172,33 @@
 
   // js/modules/alfabank.js
   var initElementsAlfabank = () => {
-    document.body.innerHTML = document.body.innerHTML.replace(/Альфа-|АЛЬФА-/g, "");
-    if (stylesheetExists(stylesheet.href)) {
+    const realisteWidgetWrap = document.createElement("div");
+    realisteWidgetWrap.className = "widget-wrap alfabank";
+    realisteWidgetWrap.id = "realisteWidgetWrap";
+    realisteWidgetWrap.innerHTML = `<div class="b-block-text container">
+    <p class="widget-wrap-title">\u041A\u0443\u043F\u0438\u0442\u044C \u0438 \u043E\u0431\u043C\u0435\u043D\u044F\u0442\u044C \u0412\u0430\u0448\u0443 \u043A\u0432\u0430\u0440\u0442\u0438\u0440\u0443</p>
+    <div id="realisteWidget" data-widget="https://alfabank.realiste.io/trade-up"></div>
+  </div>`;
+    const realisteWidgetBtn = document.createElement("a");
+    realisteWidgetBtn.href = "#realisteWidgetWrap";
+    realisteWidgetBtn.className = "realiste-widget-btn";
+    realisteWidgetBtn.innerHTML = `\u041E\u0431\u043C\u0435\u043D \u0432\u0430\u0448\u0435\u0439 \u043A\u0432\u0430\u0440\u0442\u0438\u0440\u044B`;
+    let interval;
+    const init = () => {
       const referenceNode = !detectMobile() ? document.querySelector("#benefit.a2op2t.s2op2t") : document.querySelector("#alfa > div > .c3iFBg[data-widget-name=Layout]");
       const headerLogo = !detectMobile() ? document.querySelector(".j1Cda9") : document.querySelector(".d3iFBg.d1S2QV.b1S2QV.i1S2QV");
-      const realisteWidgetWrap = document.createElement("div");
-      realisteWidgetWrap.className = "widget-wrap alfabank";
-      realisteWidgetWrap.id = "realisteWidgetWrap";
-      realisteWidgetWrap.innerHTML = `<div class="b-block-text container">
-      <p class="widget-wrap-title">\u041A\u0443\u043F\u0438\u0442\u044C \u0438 \u043E\u0431\u043C\u0435\u043D\u044F\u0442\u044C \u0412\u0430\u0448\u0443 \u043A\u0432\u0430\u0440\u0442\u0438\u0440\u0443</p>
-      <div id="realisteWidget" data-widget="https://alfabank.realiste.io/trade-up"></div>
-    </div>`;
-      headerLogo.style.display = "none";
-      if (referenceNode)
-        referenceNode.parentNode.insertBefore(realisteWidgetWrap, referenceNode.nextSibling);
-    } else
-      setTimeout(initElementsRaiffeisen, 100);
+      const btnReferenceNode = !detectMobile() ? document.querySelector(".a1rN1L.h1rN1L.b1rN1L.i1rN1L.c3FBX4.d3FBX4[data-test-id=tabs-list-tabTitle-0]") : document.querySelector(".a1rN1L.h1rN1L.b1rN1L.i1rN1L.c1NPQw.d1NPQw[data-test-id=tabs-list-tabTitle-0]");
+      if (stylesheetExists(stylesheet.href) && referenceNode && headerLogo && btnReferenceNode) {
+        clearInterval(interval);
+        findAndReplaceText(new RegExp("\u0410\u043B\u044C\u0444\u0430-|\u0410\u041B\u042C\u0424\u0410-", "g"), "");
+        headerLogo.style.display = "none";
+        if (referenceNode)
+          referenceNode.parentNode.insertBefore(realisteWidgetWrap, referenceNode.nextSibling);
+        if (btnReferenceNode)
+          btnReferenceNode.parentNode.insertBefore(realisteWidgetBtn, btnReferenceNode.nextSibling);
+      }
+    };
+    interval = setInterval(init, 1e3);
   };
   var alfabank_default = initElementsAlfabank;
 

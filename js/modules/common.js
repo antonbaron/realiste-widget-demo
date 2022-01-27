@@ -56,5 +56,3 @@ export const findAndReplaceText = (from, to) => {
     textnodes[i].nodeValue = _nv.replace(from, to);
   }
 }
-
-// new RegExp(oldWord, "g")
