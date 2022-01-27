@@ -242,7 +242,7 @@ html {
   margin: 0px 0 30px;
 }
 
-.realiste-widget-btn {
+.realiste-widget-btn.alfabank {
   position: relative;
   display: inline-block;
   border: 0;
@@ -263,8 +263,33 @@ html {
   -webkit-box-sizing: border-box;
 }
 
-.realiste-widget-btn:hover {
+.realiste-widget-btn.alfabank:hover {
   background: rgba(11,31,53,.15);
+}
+
+/* rshb.widget-demo styles */
+.widget-wrap.rshb {
+  padding: 40px 15px 20px;
+  border: solid #eee;
+  border-width: 0 0 1px;
+}
+
+.widget-wrap.rshb .widget-wrap-inner {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.widget-wrap.rshb .widget-wrap-title {
+  font-family: Proxima Nova;
+  font-size: 28px;
+  font-weight: 300;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.23;
+  letter-spacing: normal;
+  text-align: left;
+  color: #242629;
+  margin: 0;
 }
 
 @media only screen and (max-width: 767px) {

@@ -12,7 +12,7 @@ const initElementsAlfabank = () => {
 
   const realisteWidgetBtn = document.createElement('a');
   realisteWidgetBtn.href = '#realisteWidgetWrap';
-  realisteWidgetBtn.className = 'realiste-widget-btn';
+  realisteWidgetBtn.className = 'realiste-widget-btn alfabank';
 
   realisteWidgetBtn.innerHTML = `Обмен вашей квартиры`;
 
