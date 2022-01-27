@@ -36,3 +36,5 @@ const initElementsRshb = () => {
 
   interval = setInterval(init, 1000);
 }
+
+export default initElementsRshb;

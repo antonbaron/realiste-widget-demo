@@ -324,4 +324,9 @@ html {
     padding: 0 15px;
     text-align: left;
   }
+
+  /* rshb.widget-demo styles */
+  .widget-wrap.rshb .widget-wrap-title {
+    font-size: 20px;
+  }
 }
