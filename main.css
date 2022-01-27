@@ -233,6 +233,7 @@ html {
   text-align: center;
   border-top: 0;
   padding-top: 60px;
+  scroll-margin: 0;
 }
 
 .widget-wrap.alfabank .widget-wrap-title {

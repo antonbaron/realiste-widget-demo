@@ -11,6 +11,9 @@ import { stylesheet, stylesheetExists, detectMobile, findAndReplaceText } from '
 const pageIsLoaded = (partnerName) => constants.PARTNERS[partnerName].some(el => window.location.origin == el);
 
 document.addEventListener("DOMContentLoaded", function() {
+  console.log('DOMContentLoaded');
+  console.log('is alfabank');
+  console.log(pageIsLoaded('ALFABANK'));
   
   if (pageIsLoaded('MR_GROUP')) {
     console.log('MR_GROUP');

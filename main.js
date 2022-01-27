@@ -207,6 +207,9 @@
   // main-global.js
   var pageIsLoaded = (partnerName) => constants_default.PARTNERS[partnerName].some((el) => window.location.origin == el);
   document.addEventListener("DOMContentLoaded", function() {
+    console.log("DOMContentLoaded");
+    console.log("is alfabank");
+    console.log(pageIsLoaded("ALFABANK"));
     if (pageIsLoaded("MR_GROUP")) {
       console.log("MR_GROUP");
       mr_group_default();
