@@ -61,7 +61,7 @@ const initElementsMrGroup = () => {
     if (contentText && similarItems) contentText.insertBefore(tradeUpColumns, similarItems);
     if (advantagesWrapper) contentWrapPage.insertBefore(tradeUpColumns, advantagesWrapper);
     header.insertBefore(tradeInButton, headerIcons);
-  } else setTimeout(initElementsMrGroup, 100);
+  };
 }
 
 export default initElementsMrGroup;

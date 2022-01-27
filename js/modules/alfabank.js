@@ -30,8 +30,8 @@ const initElementsAlfabank = () => {
 
       headerLogo.style.display = 'none';
 
-      if (referenceNode) referenceNode.parentNode.insertBefore(realisteWidgetWrap, referenceNode.nextSibling);
-      if (btnReferenceNode) btnReferenceNode.parentNode.insertBefore(realisteWidgetBtn, btnReferenceNode.nextSibling);
+      referenceNode.parentNode.insertBefore(realisteWidgetWrap, referenceNode.nextSibling);
+      btnReferenceNode.parentNode.insertBefore(realisteWidgetBtn, btnReferenceNode.nextSibling);
     }
   }
 
