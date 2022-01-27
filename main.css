@@ -242,6 +242,31 @@ html {
   margin: 0px 0 30px;
 }
 
+.widget-wrap.alfabank .realiste-widget-btn {
+  position: relative;
+  display: inline-block;
+  border: 0;
+  background: rgba(11,31,53,.07);
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  height: 32px;
+  padding: 7px 16px 8px;
+  margin-right: 8px;
+  border-radius: 32px;
+  font-size: 14px;
+  color: #0b1f35;
+  text-decoration: none;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+
+.widget-wrap.alfabank .realiste-widget-btn:hover {
+  background: rgba(11,31,53,.15);
+}
+
 @media only screen and (max-width: 767px) {
   /* raiffeisen.widget-demo styles */
   .widget-wrap.raiffeisen iframe{
