@@ -272,6 +272,7 @@ html {
   padding: 40px 15px 20px;
   border: solid #eee;
   border-width: 0 0 1px;
+  scroll-margin: 0;
 }
 
 .widget-wrap.rshb .widget-wrap-inner {
@@ -326,7 +327,15 @@ html {
   }
 
   /* rshb.widget-demo styles */
+  .widget-wrap.rshb {
+    padding-right: 0;
+    padding-left: 0;
+    scroll-margin: 0;
+  }
+
   .widget-wrap.rshb .widget-wrap-title {
     font-size: 20px;
+    padding-right: 15px;
+    padding-left: 15px;
   }
 }
