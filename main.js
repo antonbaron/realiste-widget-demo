@@ -127,46 +127,51 @@
       if (advantagesWrapper)
         contentWrapPage.insertBefore(tradeUpColumns, advantagesWrapper);
       header.insertBefore(tradeInButton, headerIcons);
-    } else
-      setTimeout(initElementsMrGroup, 100);
+    }
+    ;
   };
   var mr_group_default = initElementsMrGroup;
 
   // js/modules/raiffeisen.js
   var initElementsRaiffeisen = () => {
-    document.body.innerHTML = document.body.innerHTML.replace(/Райффайзен/g, "");
-    if (stylesheetExists(stylesheet.href)) {
-      const calcContainer = document.querySelector("#calc.b-page-heading.container");
-      const bodyContainer = document.querySelector(".body-container");
-      const btnIntroBtn = document.querySelector(".b-intro__block-buttons .btn-text");
+    const realisteWidgetWrap = document.createElement("div");
+    realisteWidgetWrap.className = "widget-wrap raiffeisen";
+    realisteWidgetWrap.id = "realisteWidgetWrap";
+    realisteWidgetWrap.innerHTML = `<div class="b-block-text container">
+    <h2 class="e-title e-title--h2">\u041A\u0443\u043F\u0438\u0442\u044C \u0438 \u043E\u0431\u043C\u0435\u043D\u044F\u0442\u044C \u0412\u0430\u0448\u0443 \u043A\u0432\u0430\u0440\u0442\u0438\u0440\u0443</h2>
+    <div id="realisteWidget" data-widget="https://raiffeisen.realiste.io/trade-up"></div>
+  </div>`;
+    let interval;
+    const init = () => {
+      const referenceNode = document.querySelector("#calc.b-page-heading.container");
       const headerLogo = document.querySelector(".header__logo");
-      const realisteWidgetWrap = document.createElement("div");
-      realisteWidgetWrap.className = "widget-wrap raiffeisen";
-      realisteWidgetWrap.id = "realisteWidgetWrap";
-      realisteWidgetWrap.innerHTML = `<div class="b-block-text container">
-      <h2 class="e-title e-title--h2">\u041A\u0443\u043F\u0438\u0442\u044C \u0438 \u043E\u0431\u043C\u0435\u043D\u044F\u0442\u044C \u0412\u0430\u0448\u0443 \u043A\u0432\u0430\u0440\u0442\u0438\u0440\u0443</h2>
-      <div id="realisteWidget" data-widget="https://raiffeisen.realiste.io/trade-up"></div>
-    </div>`;
-      btnIntroBtn.href = "#realisteWidgetWrap";
-      btnIntroBtn.innerHTML = "\u0420\u0430\u0441\u0441\u0447\u0438\u0442\u0430\u0442\u044C \u0443\u0441\u043B\u043E\u0432\u0438\u044F \u043F\u043E Trade In";
-      headerLogo.style.display = "none";
-      if (calcContainer)
-        bodyContainer.insertBefore(realisteWidgetWrap, calcContainer);
-    } else
-      setTimeout(initElementsRaiffeisen, 100);
+      const btnIntroBtn = document.querySelector(".b-intro__block-buttons .btn-text");
+      if (stylesheetExists(stylesheet.href) && referenceNode && headerLogo && btnIntroBtn) {
+        clearInterval(interval);
+        findAndReplaceText(new RegExp("\u0420\u0430\u0439\u0444\u0444\u0430\u0439\u0437\u0435\u043D", "g"), "");
+        headerLogo.style.display = "none";
+        btnIntroBtn.href = "#realisteWidgetWrap";
+        btnIntroBtn.innerHTML = "\u0420\u0430\u0441\u0441\u0447\u0438\u0442\u0430\u0442\u044C \u0443\u0441\u043B\u043E\u0432\u0438\u044F \u043F\u043E Trade In";
+        referenceNode.parentNode.insertBefore(realisteWidgetWrap, referenceNode);
+      }
+    };
+    interval = setInterval(init, 1e3);
   };
   var raiffeisen_default = initElementsRaiffeisen;
 
   // js/modules/scor.js
   var initElementsScor = () => {
-    if (stylesheetExists(stylesheet.href)) {
+    let interval;
+    const init = () => {
       const formWrap = document.querySelector(".right_oCgtn");
-      if (formWrap)
+      if (stylesheetExists(stylesheet.href) && formWrap) {
+        clearInterval(interval);
         formWrap.innerHTML = `<div class="widget-wrap scor" id="realisteWidgetWrap">
-      <div id="realisteWidget" data-widget="https://scor.realiste.io/"></div>
-    </div>`;
-    } else
-      setTimeout(initElementsScor, 100);
+        <div id="realisteWidget" data-widget="https://scor.realiste.io/"></div>
+      </div>`;
+      }
+    };
+    interval = setInterval(init, 1e3);
   };
   var scor_default = initElementsScor;
 
@@ -181,7 +186,7 @@
   </div>`;
     const realisteWidgetBtn = document.createElement("a");
     realisteWidgetBtn.href = "#realisteWidgetWrap";
-    realisteWidgetBtn.className = "realiste-widget-btn";
+    realisteWidgetBtn.className = "realiste-widget-btn alfabank";
     realisteWidgetBtn.innerHTML = `\u041E\u0431\u043C\u0435\u043D \u0432\u0430\u0448\u0435\u0439 \u043A\u0432\u0430\u0440\u0442\u0438\u0440\u044B`;
     let interval;
     const init = () => {
@@ -192,15 +197,42 @@
         clearInterval(interval);
         findAndReplaceText(new RegExp("\u0410\u043B\u044C\u0444\u0430-|\u0410\u041B\u042C\u0424\u0410-", "g"), "");
         headerLogo.style.display = "none";
-        if (referenceNode)
-          referenceNode.parentNode.insertBefore(realisteWidgetWrap, referenceNode.nextSibling);
-        if (btnReferenceNode)
-          btnReferenceNode.parentNode.insertBefore(realisteWidgetBtn, btnReferenceNode.nextSibling);
+        referenceNode.parentNode.insertBefore(realisteWidgetWrap, referenceNode.nextSibling);
+        btnReferenceNode.parentNode.insertBefore(realisteWidgetBtn, btnReferenceNode.nextSibling);
       }
     };
     interval = setInterval(init, 1e3);
   };
   var alfabank_default = initElementsAlfabank;
+
+  // js/modules/rshb.js
+  var initElementsRshb = () => {
+    const realisteWidgetWrap = document.createElement("div");
+    realisteWidgetWrap.className = "widget-wrap rshb";
+    realisteWidgetWrap.id = "realisteWidgetWrap";
+    realisteWidgetWrap.innerHTML = `<div class="widget-wrap-inner">
+    <p class="widget-wrap-title">\u041A\u0443\u043F\u0438\u0442\u044C \u0438 \u043E\u0431\u043C\u0435\u043D\u044F\u0442\u044C \u0412\u0430\u0448\u0443 \u043A\u0432\u0430\u0440\u0442\u0438\u0440\u0443</p>
+    <div id="realisteWidget" data-widget="https://rshb.realiste.io/object-evaluation"></div></div>`;
+    const realisteWidgetBtn = document.createElement("a");
+    realisteWidgetBtn.href = "#realisteWidgetWrap";
+    realisteWidgetBtn.className = "btn btn-success";
+    realisteWidgetBtn.innerHTML = `\u041E\u0446\u0435\u043D\u0438\u0442\u044C \u043A\u0432\u0430\u0440\u0442\u0438\u0440\u0443`;
+    let interval;
+    const init = () => {
+      const referenceNode = document.querySelector(".mortgage-programs");
+      const headerLogo = !detectMobile() ? document.querySelector(".moblogo.showonly_desktop") : document.querySelector(".moblogo.showonly_mobile");
+      const btnContainer = document.querySelector(".mortgage-main-banner_button");
+      if (stylesheetExists(stylesheet.href) && referenceNode && headerLogo && btnContainer) {
+        clearInterval(interval);
+        findAndReplaceText(new RegExp("\u0420\u0421\u0425\u0411-|\u0420\u0421\u0425\u0411|\u0420\u043E\u0441\u0441\u0435\u043B\u044C\u0445\u043E\u0437|", "g"), "");
+        headerLogo.style.display = "none";
+        referenceNode.parentNode.insertBefore(realisteWidgetWrap, referenceNode.nextSibling);
+        btnContainer.append(realisteWidgetBtn);
+      }
+    };
+    interval = setInterval(init, 1e3);
+  };
+  var rshb_default = initElementsRshb;
 
   // main-global.js
   var pageIsLoaded = (partnerName) => constants_default.PARTNERS[partnerName].some((el) => window.location.origin == el);
@@ -217,6 +249,9 @@
     } else if (pageIsLoaded("ALFABANK")) {
       console.log("ALFABANK");
       alfabank_default();
+    } else if (pageIsLoaded("RSHB")) {
+      console.log("RSHB");
+      rshb_default();
     }
   });
 })();
