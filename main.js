@@ -1,4 +1,4 @@
-(() => {
+window.onload = function() {
   // js/constants.js
   var constants_default = {
     PARTNERS: {
@@ -325,4 +325,4 @@
     console.log("MTSBANK");
     mtsbank_default();
   }
-})();
+};
