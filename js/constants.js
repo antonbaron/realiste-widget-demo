@@ -17,6 +17,9 @@ export default {
     ],
     RSHB: [
       'https://www--rshb--ru.widget-demo.realiste.io'
+    ],
+    DOMRFBANK: [
+      'https://domrfbank--ru.widget-demo.realiste.io'
     ]
   }
 }

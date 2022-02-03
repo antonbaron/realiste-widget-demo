@@ -19,6 +19,9 @@
       ],
       RSHB: [
         "https://www--rshb--ru.widget-demo.realiste.io"
+      ],
+      DOMRFBANK: [
+        "https://domrfbank--ru.widget-demo.realiste.io"
       ]
     }
   };
@@ -175,6 +178,36 @@
   };
   var scor_default = initElementsScor;
 
+  // js/modules/alfabank.js
+  var initElementsAlfabank = () => {
+    const realisteWidgetWrap = document.createElement("div");
+    realisteWidgetWrap.className = "widget-wrap alfabank";
+    realisteWidgetWrap.id = "realisteWidgetWrap";
+    realisteWidgetWrap.innerHTML = `<div class="b-block-text container">
+    <p class="widget-wrap-title">\u041A\u0443\u043F\u0438\u0442\u044C \u0438 \u043E\u0431\u043C\u0435\u043D\u044F\u0442\u044C \u0412\u0430\u0448\u0443 \u043A\u0432\u0430\u0440\u0442\u0438\u0440\u0443</p>
+    <div id="realisteWidget" data-widget="https://alfabank.realiste.io/trade-up"></div>
+  </div>`;
+    const realisteWidgetBtn = document.createElement("a");
+    realisteWidgetBtn.href = "#realisteWidgetWrap";
+    realisteWidgetBtn.className = "realiste-widget-btn alfabank";
+    realisteWidgetBtn.innerHTML = `\u041E\u0431\u043C\u0435\u043D \u0432\u0430\u0448\u0435\u0439 \u043A\u0432\u0430\u0440\u0442\u0438\u0440\u044B`;
+    let interval;
+    const init = () => {
+      const referenceNode = !detectMobile() ? document.querySelector("#benefit.a2op2t.s2op2t") : document.querySelector("#alfa > div > .c3iFBg[data-widget-name=Layout]");
+      const headerLogo = !detectMobile() ? document.querySelector(".j1Cda9") : document.querySelector(".d3iFBg.d1S2QV.b1S2QV.i1S2QV");
+      const btnReferenceNode = !detectMobile() ? document.querySelector(".a1rN1L.h1rN1L.b1rN1L.i1rN1L.c3FBX4.d3FBX4[data-test-id=tabs-list-tabTitle-0]") : document.querySelector(".a1rN1L.h1rN1L.b1rN1L.i1rN1L.c1NPQw.d1NPQw[data-test-id=tabs-list-tabTitle-0]");
+      if (stylesheetExists(stylesheet.href) && referenceNode && headerLogo && btnReferenceNode) {
+        clearInterval(interval);
+        findAndReplaceText(new RegExp("\u0410\u043B\u044C\u0444\u0430-|\u0410\u041B\u042C\u0424\u0410-", "g"), "");
+        headerLogo.style.display = "none";
+        referenceNode.parentNode.insertBefore(realisteWidgetWrap, referenceNode.nextSibling);
+        btnReferenceNode.parentNode.insertBefore(realisteWidgetBtn, btnReferenceNode.nextSibling);
+      }
+    };
+    interval = setInterval(init, 1e3);
+  };
+  var alfabank_default = initElementsAlfabank;
+
   // js/modules/rshb.js
   var initElementsRshb = () => {
     const realisteWidgetWrap = document.createElement("div");
@@ -204,11 +237,36 @@
   };
   var rshb_default = initElementsRshb;
 
+  // js/modules/domrfbank.js
+  var initElementsDomrfbank = () => {
+    const realisteWidgetWrap = document.createElement("div");
+    realisteWidgetWrap.className = "widget-wrap domrfbank";
+    realisteWidgetWrap.id = "realisteWidgetWrap";
+    realisteWidgetWrap.innerHTML = `<h5 class="widget-wrap-title mortgage-list__cardtitle mortgage-list__cardtitle_wd100 mortgage-list__cardtitle_big">\u041A\u0443\u043F\u0438\u0442\u044C \u0438 \u043E\u0431\u043C\u0435\u043D\u044F\u0442\u044C \u0412\u0430\u0448\u0443 \u043A\u0432\u0430\u0440\u0442\u0438\u0440\u0443</h5>
+    <div id="realisteWidget" data-widget="https://domrfbank.realiste.io/trade-up"></div>`;
+    const realisteWidgetBtn = document.createElement("a");
+    realisteWidgetBtn.href = "#realisteWidgetWrap";
+    realisteWidgetBtn.className = "realiste-widget-btn domrfbank tags__item button";
+    realisteWidgetBtn.innerHTML = `\u041E\u0431\u043C\u0435\u043D \u0432\u0430\u0448\u0435\u0439 \u043A\u0432\u0430\u0440\u0442\u0438\u0440\u044B`;
+    let interval;
+    const init = () => {
+      const referenceNode = document.querySelector(".mortgage-list__body");
+      const headerLogo = document.querySelector(".header__logo");
+      const btnReferenceNode = document.querySelector(".tags__item button:first-child");
+      if (stylesheetExists(stylesheet.href) && referenceNode && headerLogo && btnReferenceNode) {
+        clearInterval(interval);
+        findAndReplaceText(new RegExp("\u0414\u041E\u041C.\u0420\u0424", "g"), "");
+        headerLogo.style.display = "none";
+        referenceNode.append(realisteWidgetWrap);
+        btnReferenceNode.parentNode.insertBefore(realisteWidgetBtn, btnReferenceNode.nextSibling);
+      }
+    };
+    interval = setInterval(init, 1e3);
+  };
+  var domrfbank_default = initElementsDomrfbank;
+
   // main-global.js
   var pageIsLoaded = (partnerName) => constants_default.PARTNERS[partnerName].some((el) => window.location.origin == el);
-  console.log("DOMContentLoaded");
-  console.log("is alfabank");
-  console.log(pageIsLoaded("ALFABANK"));
   if (pageIsLoaded("MR_GROUP")) {
     console.log("MR_GROUP");
     mr_group_default();
@@ -220,33 +278,12 @@
     scor_default();
   } else if (pageIsLoaded("ALFABANK")) {
     console.log("ALFABANK");
-    let interval;
-    const initElementsAlfabank = () => {
-      const realisteWidgetWrap = document.createElement("div");
-      realisteWidgetWrap.className = "widget-wrap alfabank";
-      realisteWidgetWrap.id = "realisteWidgetWrap";
-      realisteWidgetWrap.innerHTML = `<div class="b-block-text container">
-      <p class="widget-wrap-title">\u041A\u0443\u043F\u0438\u0442\u044C \u0438 \u043E\u0431\u043C\u0435\u043D\u044F\u0442\u044C \u0412\u0430\u0448\u0443 \u043A\u0432\u0430\u0440\u0442\u0438\u0440\u0443</p>
-      <div id="realisteWidget" data-widget="https://alfabank.realiste.io/trade-up"></div>
-    </div>`;
-      const realisteWidgetBtn = document.createElement("a");
-      realisteWidgetBtn.href = "#realisteWidgetWrap";
-      realisteWidgetBtn.className = "realiste-widget-btn alfabank";
-      realisteWidgetBtn.innerHTML = `\u041E\u0431\u043C\u0435\u043D \u0432\u0430\u0448\u0435\u0439 \u043A\u0432\u0430\u0440\u0442\u0438\u0440\u044B`;
-      const referenceNode = !detectMobile() ? document.querySelector("#benefit.a2op2t.s2op2t") : document.querySelector("#alfa > div > .c3iFBg[data-widget-name=Layout]");
-      const headerLogo = !detectMobile() ? document.querySelector(".j1Cda9") : document.querySelector(".d3iFBg.d1S2QV.b1S2QV.i1S2QV");
-      const btnReferenceNode = !detectMobile() ? document.querySelector(".a1rN1L.h1rN1L.b1rN1L.i1rN1L.c3FBX4.d3FBX4[data-test-id=tabs-list-tabTitle-0]") : document.querySelector(".a1rN1L.h1rN1L.b1rN1L.i1rN1L.c1NPQw.d1NPQw[data-test-id=tabs-list-tabTitle-0]");
-      if (stylesheetExists(stylesheet.href) && referenceNode && headerLogo && btnReferenceNode) {
-        clearInterval(interval);
-        findAndReplaceText(new RegExp("\u0410\u043B\u044C\u0444\u0430-|\u0410\u041B\u042C\u0424\u0410-", "g"), "");
-        headerLogo.style.display = "none";
-        referenceNode.parentNode.insertBefore(realisteWidgetWrap, referenceNode.nextSibling);
-        btnReferenceNode.parentNode.insertBefore(realisteWidgetBtn, btnReferenceNode.nextSibling);
-      }
-    };
-    interval = setInterval(initElementsAlfabank, 1e3);
+    alfabank_default();
   } else if (pageIsLoaded("RSHB")) {
     console.log("RSHB");
     rshb_default();
+  } else if (pageIsLoaded("DOMRFBANK")) {
+    console.log("DOMRFBANK");
+    domrfbank_default();
   }
 })();
