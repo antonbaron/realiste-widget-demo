@@ -301,10 +301,10 @@ html {
 }
 
 .widget-wrap.domrfbank iframe {
-  border-radius: 24px;
+  border-radius: 24px !important;
 }
 
-.widget-wrap.domrfbank .widget-wrap-title {
+.realiste-widget-btn.domrfbank {
   color: #fff;
   background: #8bc540;
 }
@@ -369,7 +369,7 @@ html {
   }
 
   .widget-wrap.domrfbank iframe {
-    border-radius: 0;
+    border-radius: 0 !important;
   }
 
   .widget-wrap.domrfbank .widget-wrap-title {
