@@ -19,7 +19,7 @@ const initElementsMtsbank = () => {
   const init = () => {
     const title = findElementByTagAndText("//h1[text()='ИПОТЕЧНЫЕ ПРОГРАММЫ']");
     const referenceNode = title.nextSibling;
-    const headerLogo = document.querySelector('a[aria-label=Главная страница]');
+    const headerLogo = document.querySelector('a[aria-label="Главная страница"]');
 
     if (stylesheetExists(stylesheet.href) && referenceNode && headerLogo) {
       clearInterval(interval);
