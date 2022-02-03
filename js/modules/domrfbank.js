@@ -19,7 +19,7 @@ const initElementsDomrfbank = () => {
   const init = () => {
     const referenceNode = document.querySelector('.mortgage-list__body');
     const headerLogo = document.querySelector('.header__logo');
-    const btnReferenceNode = document.querySelector('.tags__item button:first-child');
+    const btnReferenceNode = document.querySelector('.tags__item.button:first-child');
 
     if (stylesheetExists(stylesheet.href) && referenceNode && headerLogo && btnReferenceNode) {
       clearInterval(interval);

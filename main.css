@@ -295,7 +295,18 @@ html {
 }
 
 /* domrfbank.widget-demo styles */
-.widget-wrap.rshb .widget-wrap-title {
+.widget-wrap.domrfbank {
+  padding: 40px 0 0;
+  width: 100%;
+}
+
+.widget-wrap.domrfbank iframe {
+  border-radius: 24px;
+}
+
+.widget-wrap.domrfbank .widget-wrap-title {
+  color: #fff;
+  background: #8bc540;
 }
 
 
@@ -341,6 +352,27 @@ html {
 
   .widget-wrap.rshb .widget-wrap-title {
     font-size: 20px;
+    padding-right: 15px;
+    padding-left: 15px;
+  }
+
+  /* domrfbank.widget-demo styles */
+  .mortgage-list__body {
+    overflow: visible;
+  }
+
+  .widget-wrap.domrfbank {
+    margin-left: -15px;
+    margin-right: -15px;
+    width: calc(100% + 30px);
+    scroll-margin: 110px;
+  }
+
+  .widget-wrap.domrfbank iframe {
+    border-radius: 0;
+  }
+
+  .widget-wrap.domrfbank .widget-wrap-title {
     padding-right: 15px;
     padding-left: 15px;
   }
