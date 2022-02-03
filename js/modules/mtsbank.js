@@ -20,13 +20,12 @@ const initElementsMtsbank = () => {
     const title = findElementByTagAndText("//h1[text()='ИПОТЕЧНЫЕ ПРОГРАММЫ']");
     const referenceNodeWidget = title.parentNode;
     const referenceNodeBtn = title.nextSibling;
-    document.querySelector('body').classList.add("MyClass");
+    document.querySelector('body').classList.add('mtsbank');
 
     if (stylesheetExists(stylesheet.href) && referenceNodeWidget && referenceNodeBtn) {
       clearInterval(interval);
 
       findAndReplaceText(new RegExp('МТС|МТС-', "g"), '');
-
 
       referenceNodeWidget.append(realisteWidgetWrap);
       referenceNodeWidget.insertBefore(realisteWidgetBtn, referenceNodeBtn);
