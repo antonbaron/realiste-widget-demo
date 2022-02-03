@@ -21,8 +21,12 @@ const initElementsMtsbank = () => {
     const referenceNodeWidget = title.parentNode;
     const referenceNodeBtn = title.nextSibling;
     document.querySelector('body').classList.add('mtsbank');
+    const test = false;
 
-    if (stylesheetExists(stylesheet.href) && referenceNodeWidget && referenceNodeBtn) {
+    console.log('init');
+
+    if (stylesheetExists(stylesheet.href) && referenceNodeWidget && referenceNodeBtn && test) {
+      console.log('clear interval');
       clearInterval(interval);
 
       findAndReplaceText(new RegExp('МТС|МТС-', "g"), '');
