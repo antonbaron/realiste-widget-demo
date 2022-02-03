@@ -309,6 +309,53 @@ html {
   background: #8bc540;
 }
 
+/* mtsbank.widget-demo styles */
+.widget-wrap.mtsbank {
+  border: 0;
+  padding: 40px 0 0;
+  scroll-margin: 0;
+}
+
+.widget-wrap.mtsbank iframe {
+  box-shadow: rgb(0 0 0 / 8%) 0px 9px 10px, rgb(0 0 0 / 8%) 0px 0px 8px !important;
+}
+
+.realiste-widget-btn.mtsbank {
+  height: 52px;
+  padding: 0px 32px;
+  border: 2px solid rgb(227, 6, 17);
+  border-radius: 8px;
+  background-color: rgb(227, 6, 17);
+  outline: none;
+  display: inline-block;
+  vertical-align: top;
+  white-space: pre-line;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  font-family: "MTS Sans", Arial, Helvetica, sans-serif;
+  font-weight: 500;
+  text-align: left;
+  text-transform: none;
+  transition: all 200ms ease 0s;
+  font-size: 17px;
+  color: #fff;
+  line-height: 46px;
+  margin-bottom: 20px;
+}
+
+.widget-wrap-title.mtsbank {
+  white-space: pre-line;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  font-family: "MTS Sans", Arial, Helvetica, sans-serif;
+  text-align: left;
+  text-transform: none;
+  color: rgb(0, 0, 0);
+  transition: all 200ms ease 0s;
+  font-size: 32px;
+  line-height: 36px;
+  font-weight: 700;
+}
 
 @media only screen and (max-width: 767px) {
   /* raiffeisen.widget-demo styles */
