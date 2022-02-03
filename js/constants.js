@@ -20,6 +20,9 @@ export default {
     ],
     DOMRFBANK: [
       'https://domrfbank--ru.widget-demo.realiste.io'
+    ],
+    MTSBANK: [
+      'https://www--mtsbank--ru.widget-demo.realiste.io'
     ]
   }
 }

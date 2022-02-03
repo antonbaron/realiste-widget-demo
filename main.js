@@ -22,6 +22,9 @@
       ],
       DOMRFBANK: [
         "https://domrfbank--ru.widget-demo.realiste.io"
+      ],
+      MTSBANK: [
+        "https://www--mtsbank--ru.widget-demo.realiste.io"
       ]
     }
   };
@@ -67,6 +70,9 @@
       _nv = textnodes[i].nodeValue;
       textnodes[i].nodeValue = _nv.replace(from, to);
     }
+  };
+  var findElementByTagAndText = (xpath) => {
+    return document.evaluate(xpath, document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;
   };
 
   // js/modules/mr-group.js
@@ -265,6 +271,34 @@
   };
   var domrfbank_default = initElementsDomrfbank;
 
+  // js/modules/mtsbank.js
+  var initElementsMtsbank = () => {
+    const realisteWidgetWrap = document.createElement("div");
+    realisteWidgetWrap.className = "widget-wrap mtsbank";
+    realisteWidgetWrap.id = "realisteWidgetWrap";
+    realisteWidgetWrap.innerHTML = `<h2 class="widget-wrap-title mtsbank">\u041A\u0443\u043F\u0438\u0442\u044C \u0438 \u043E\u0431\u043C\u0435\u043D\u044F\u0442\u044C \u0412\u0430\u0448\u0443 \u043A\u0432\u0430\u0440\u0442\u0438\u0440\u0443</h2>
+    <div id="realisteWidget" data-widget="https://mtsbank.realiste.io/trade-up"></div>`;
+    const realisteWidgetBtn = document.createElement("a");
+    realisteWidgetBtn.href = "#realisteWidgetWrap";
+    realisteWidgetBtn.className = "realiste-widget-btn mtsbank";
+    realisteWidgetBtn.innerHTML = `\u041E\u0431\u043C\u0435\u043D \u0432\u0430\u0448\u0435\u0439 \u043A\u0432\u0430\u0440\u0442\u0438\u0440\u044B`;
+    let interval;
+    const init = () => {
+      const title = findElementByTagAndText("//h1[text()='\u0418\u041F\u041E\u0422\u0415\u0427\u041D\u042B\u0415 \u041F\u0420\u041E\u0413\u0420\u0410\u041C\u041C\u042B']");
+      const referenceNode = title.nextSibling;
+      const headerLogo = document.querySelector("a[aria-label=\u0413\u043B\u0430\u0432\u043D\u0430\u044F \u0441\u0442\u0440\u0430\u043D\u0438\u0446\u0430]");
+      if (stylesheetExists(stylesheet.href) && referenceNode && headerLogo) {
+        clearInterval(interval);
+        findAndReplaceText(new RegExp("\u041C\u0422\u0421|\u041C\u0422\u0421-", "g"), "");
+        headerLogo.style.display = "none";
+        referenceNode.append(realisteWidgetWrap);
+        referenceNode.prepend(realisteWidgetBtn);
+      }
+    };
+    interval = setInterval(init, 1e3);
+  };
+  var mtsbank_default = initElementsMtsbank;
+
   // main-global.js
   var pageIsLoaded = (partnerName) => constants_default.PARTNERS[partnerName].some((el) => window.location.origin == el);
   if (pageIsLoaded("MR_GROUP")) {
@@ -285,5 +319,8 @@
   } else if (pageIsLoaded("DOMRFBANK")) {
     console.log("DOMRFBANK");
     domrfbank_default();
+  } else if (pageIsLoaded("MTSBANK")) {
+    console.log("MTSBANK");
+    mtsbank_default();
   }
 })();

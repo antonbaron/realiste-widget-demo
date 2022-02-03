@@ -56,3 +56,7 @@ export const findAndReplaceText = (from, to) => {
     textnodes[i].nodeValue = _nv.replace(from, to);
   }
 }
+
+export const findElementByTagAndText = (xpath) => {
+  return document.evaluate(xpath, document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;
+}

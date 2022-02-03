@@ -6,6 +6,7 @@ import initElementsScor from './js/modules/scor.js';
 import initElementsAlfabank from './js/modules/alfabank.js';
 import initElementsRshb from './js/modules/rshb.js';
 import initElementsDomrfbank from './js/modules/domrfbank.js';
+import initElementsMtsbank from './js/modules/mtsbank.js';
 
 const pageIsLoaded = (partnerName) => constants.PARTNERS[partnerName].some(el => window.location.origin == el);
 
@@ -27,4 +28,7 @@ if (pageIsLoaded('MR_GROUP')) {
 } else if (pageIsLoaded('DOMRFBANK')) {
   console.log('DOMRFBANK');
   initElementsDomrfbank();
+} else if (pageIsLoaded('MTSBANK')) {
+  console.log('MTSBANK');
+  initElementsMtsbank();
 }
