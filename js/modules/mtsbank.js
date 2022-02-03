@@ -18,18 +18,18 @@ const initElementsMtsbank = () => {
 
   const init = () => {
     const title = findElementByTagAndText("//h1[text()='ИПОТЕЧНЫЕ ПРОГРАММЫ']");
-    const referenceNode = title.nextSibling;
-    const headerLogo = document.querySelector('a[aria-label="Главная страница"]');
+    const referenceNodeWidget = title.parentNode;
+    const referenceNodeBtn = title.nextSibling;
+    document.querySelector('body').classList.add("MyClass");
 
-    if (stylesheetExists(stylesheet.href) && referenceNode && headerLogo) {
+    if (stylesheetExists(stylesheet.href) && referenceNodeWidget && referenceNodeBtn) {
       clearInterval(interval);
 
       findAndReplaceText(new RegExp('МТС|МТС-', "g"), '');
 
-      headerLogo.style.display = 'none';
 
-      referenceNode.append(realisteWidgetWrap);
-      referenceNode.prepend(realisteWidgetBtn);
+      referenceNodeWidget.append(realisteWidgetWrap);
+      referenceNodeWidget.insertBefore(realisteWidgetBtn, referenceNodeBtn);
     }
   }
 

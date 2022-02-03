@@ -285,14 +285,14 @@
     let interval;
     const init = () => {
       const title = findElementByTagAndText("//h1[text()='\u0418\u041F\u041E\u0422\u0415\u0427\u041D\u042B\u0415 \u041F\u0420\u041E\u0413\u0420\u0410\u041C\u041C\u042B']");
-      const referenceNode = title.nextSibling;
-      const headerLogo = document.querySelector('a[aria-label="\u0413\u043B\u0430\u0432\u043D\u0430\u044F \u0441\u0442\u0440\u0430\u043D\u0438\u0446\u0430"]');
-      if (stylesheetExists(stylesheet.href) && referenceNode && headerLogo) {
+      const referenceNodeWidget = title.parentNode;
+      const referenceNodeBtn = title.nextSibling;
+      document.querySelector("body").classList.add("MyClass");
+      if (stylesheetExists(stylesheet.href) && referenceNodeWidget && referenceNodeBtn) {
         clearInterval(interval);
         findAndReplaceText(new RegExp("\u041C\u0422\u0421|\u041C\u0422\u0421-", "g"), "");
-        headerLogo.style.display = "none";
-        referenceNode.append(realisteWidgetWrap);
-        referenceNode.prepend(realisteWidgetBtn);
+        referenceNodeWidget.append(realisteWidgetWrap);
+        referenceNodeWidget.insertBefore(realisteWidgetBtn, referenceNodeBtn);
       }
     };
     interval = setInterval(init, 1e3);

@@ -353,8 +353,13 @@ html {
   color: rgb(0, 0, 0);
   transition: all 200ms ease 0s;
   font-size: 32px;
-  line-height: 36px;
+  line-height: 1.4;
   font-weight: 700;
+  text-transform: uppercase;
+}
+
+body.mtsbank a[aria-label='Главная страница'] {
+  display: none;
 }
 
 @media only screen and (max-width: 767px) {
@@ -422,5 +427,15 @@ html {
   .widget-wrap.domrfbank .widget-wrap-title {
     padding-right: 15px;
     padding-left: 15px;
+  }
+
+  /* mtsbank.widget-demo styles */
+  .widget-wrap.mtsbank #realisteWidget {
+    margin-left: -15px;
+    margin-right: -15px;
+  }
+
+  .widget-wrap-title.mtsbank {
+    font-size: 20px;
   }
 }
