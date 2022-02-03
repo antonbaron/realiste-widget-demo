@@ -288,9 +288,8 @@
       const referenceNodeWidget = title.parentNode;
       const referenceNodeBtn = title.nextSibling;
       document.querySelector("body").classList.add("mtsbank");
-      const test = false;
       console.log("init");
-      if (stylesheetExists(stylesheet.href) && referenceNodeWidget && referenceNodeBtn && test) {
+      if (stylesheetExists(stylesheet.href) && referenceNodeWidget && referenceNodeBtn) {
         console.log("clear interval");
         clearInterval(interval);
         findAndReplaceText(new RegExp("\u041C\u0422\u0421|\u041C\u0422\u0421-", "g"), "");
