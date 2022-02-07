@@ -332,7 +332,7 @@
     let interval;
     const init = () => {
       const tradeUpColumnsPrependSection = document.querySelector(".page.main-page .infrastructure");
-      const wrapPage = document.querySelector(".page main-page");
+      const wrapPage = document.querySelector(".page.main-page");
       document.querySelector("body").classList.add("realiste-winget-outer");
       console.log("init");
       if (stylesheetExists(stylesheet.href) && tradeUpColumnsPrependSection && wrapPage) {

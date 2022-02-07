@@ -19,7 +19,7 @@ const initElementsKortros = () => {
   <div class="trade-up-col">
     <img src="https://olga-front.github.io/mr-group.widget-demo/images/trade-up-after.jpg" alt="Trade up after">
   </div>`;
-  
+
   const realisteWidgetWrap = document.createElement('div');
   realisteWidgetWrap.className = 'widget-wrap kortros';
   realisteWidgetWrap.id = 'realisteWidgetWrap';
@@ -31,7 +31,7 @@ const initElementsKortros = () => {
 
   const init = () => {
     const tradeUpColumnsPrependSection = document.querySelector('.page.main-page .infrastructure');
-    const wrapPage = document.querySelector('.page main-page');
+    const wrapPage = document.querySelector('.page.main-page');
 
     document.querySelector('body').classList.add('realiste-winget-outer');
 
