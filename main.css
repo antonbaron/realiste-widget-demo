@@ -452,4 +452,19 @@ body.mtsbank a[aria-label='Главная страница'] {
   .widget-wrap.kortros {
     scroll-margin: 50px;
   }
+
+  .trade-up-columns.kortros .b-info__descr-inner p {
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  .trade-up-columns.kortros .trade-up-card h2 {
+    font-size: 20px;
+  }
+
+  .widget-wrap-title.kortros {
+    font-size: 20px;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
 }
