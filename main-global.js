@@ -11,6 +11,9 @@ import initElementsKortros from './js/modules/kortros.js';
 
 const pageIsLoaded = (partnerName) => constants.PARTNERS[partnerName].some(el => window.location.origin == el);
 
+console.log('pageIsLoaded(KORTROS)');
+console.log(pageIsLoaded('KORTROS'));
+
 window.onload = function() {
   if (pageIsLoaded('MR_GROUP')) {
     console.log('MR_GROUP');
