@@ -36,8 +36,10 @@ window.onload = function() {
   } else if (pageIsLoaded('MTSBANK')) {
     console.log('MTSBANK');
     initElementsMtsbank();
-  } else if (pageIsLoaded('KORTROS')) {
-    console.log('KORTROS');
-    initElementsKortros();
   }
+}
+
+if (pageIsLoaded('KORTROS')) {
+  console.log('KORTROS');
+  initElementsKortros();
 }

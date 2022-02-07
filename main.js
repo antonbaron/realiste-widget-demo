@@ -1,4 +1,4 @@
-window.onload = function() {
+(() => {
   // js/constants.js
   var constants_default = {
     PARTNERS: {
@@ -350,29 +350,32 @@ window.onload = function() {
   var pageIsLoaded = (partnerName) => constants_default.PARTNERS[partnerName].some((el) => window.location.origin == el);
   console.log("pageIsLoaded(KORTROS)");
   console.log(pageIsLoaded("KORTROS"));
-  if (pageIsLoaded("MR_GROUP")) {
-    console.log("MR_GROUP");
-    mr_group_default();
-  } else if (pageIsLoaded("RAIFFEISEN")) {
-    console.log("RAIFFEISEN");
-    raiffeisen_default();
-  } else if (pageIsLoaded("SCOR")) {
-    console.log("SCOR");
-    scor_default();
-  } else if (pageIsLoaded("ALFABANK")) {
-    console.log("ALFABANK");
-    alfabank_default();
-  } else if (pageIsLoaded("RSHB")) {
-    console.log("RSHB");
-    rshb_default();
-  } else if (pageIsLoaded("DOMRFBANK")) {
-    console.log("DOMRFBANK");
-    domrfbank_default();
-  } else if (pageIsLoaded("MTSBANK")) {
-    console.log("MTSBANK");
-    mtsbank_default();
-  } else if (pageIsLoaded("KORTROS")) {
+  window.onload = function() {
+    if (pageIsLoaded("MR_GROUP")) {
+      console.log("MR_GROUP");
+      mr_group_default();
+    } else if (pageIsLoaded("RAIFFEISEN")) {
+      console.log("RAIFFEISEN");
+      raiffeisen_default();
+    } else if (pageIsLoaded("SCOR")) {
+      console.log("SCOR");
+      scor_default();
+    } else if (pageIsLoaded("ALFABANK")) {
+      console.log("ALFABANK");
+      alfabank_default();
+    } else if (pageIsLoaded("RSHB")) {
+      console.log("RSHB");
+      rshb_default();
+    } else if (pageIsLoaded("DOMRFBANK")) {
+      console.log("DOMRFBANK");
+      domrfbank_default();
+    } else if (pageIsLoaded("MTSBANK")) {
+      console.log("MTSBANK");
+      mtsbank_default();
+    }
+  };
+  if (pageIsLoaded("KORTROS")) {
     console.log("KORTROS");
     kortros_default();
   }
-};
+})();
