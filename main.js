@@ -333,10 +333,8 @@
     const init = () => {
       const tradeUpColumnsPrependSection = document.querySelector(".page.main-page .infrastructure");
       const wrapPage = document.querySelector(".page.main-page");
-      document.querySelector("body").classList.add("realiste-winget-outer");
-      console.log("init");
+      document.querySelector("body").classList.add("realiste-widget-outer");
       if (stylesheetExists(stylesheet.href) && tradeUpColumnsPrependSection && wrapPage) {
-        console.log("clear interval");
         clearInterval(interval);
         wrapPage.insertBefore(tradeUpColumns2, tradeUpColumnsPrependSection);
         wrapPage.append(realisteWidgetWrap);

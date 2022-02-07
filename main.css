@@ -362,6 +362,11 @@ body.mtsbank a[aria-label='Главная страница'] {
   display: none;
 }
 
+/* kortros.widget-demo styles */
+.realiste-widget-outer .b-logo-kortros {
+  display: none;
+}
+
 @media only screen and (max-width: 767px) {
   /* raiffeisen.widget-demo styles */
   .widget-wrap.raiffeisen iframe{
@@ -437,5 +442,10 @@ body.mtsbank a[aria-label='Главная страница'] {
 
   .widget-wrap-title.mtsbank {
     font-size: 20px;
+  }
+
+  /* kortros.widget-demo styles */
+  .widget-wrap.kortros {
+    scroll-margin: 50px;
   }
 }
