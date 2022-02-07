@@ -7,6 +7,7 @@ import initElementsAlfabank from './js/modules/alfabank.js';
 import initElementsRshb from './js/modules/rshb.js';
 import initElementsDomrfbank from './js/modules/domrfbank.js';
 import initElementsMtsbank from './js/modules/mtsbank.js';
+import initElementsKortros from './js/modules/kortros.js';
 
 const pageIsLoaded = (partnerName) => constants.PARTNERS[partnerName].some(el => window.location.origin == el);
 
@@ -32,5 +33,8 @@ window.onload = function() {
   } else if (pageIsLoaded('MTSBANK')) {
     console.log('MTSBANK');
     initElementsMtsbank();
+  } else if (pageIsLoaded('KORTROS')) {
+    console.log('KORTROS');
+    initElementsKortros();
   }
 }

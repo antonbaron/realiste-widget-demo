@@ -23,6 +23,9 @@ export default {
     ],
     MTSBANK: [
       'https://www--mtsbank--ru.widget-demo.realiste.io'
+    ],
+    KORTROS: [
+      'https://head-liner--ru.widget-demo.realiste.io'
     ]
   }
 }
