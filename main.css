@@ -479,8 +479,11 @@ body.etalon .b-header__logo {
   }
 
   /* etalon.widget-demo styles */
-  .widget-wrap-title.etalon-group {
+  .widget-wrap.etalon-group {
     scroll-margin: 60px;
+  }
+  
+  .widget-wrap-title.etalon-group {
     padding-left: 20px;
     padding-right: 20px;
   }
