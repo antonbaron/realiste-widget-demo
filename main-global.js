@@ -37,6 +37,7 @@ window.onload = function() {
   } else if (pageIsLoaded('ETALON')) {
     console.log('ETALON');
     initElementsEtalon();
+  }
 }
 
 if (pageIsLoaded('KORTROS')) {

@@ -28,6 +28,9 @@
       ],
       KORTROS: [
         "https://head-liner--ru.widget-demo.realiste.io"
+      ],
+      ETALON: [
+        "https://etalongroup--ru.widget-demo.realiste.io"
       ]
     }
   };
@@ -344,10 +347,35 @@
   };
   var kortros_default = initElementsKortros;
 
+  // js/modules/etalon.js
+  var initElementsEtalon = () => {
+    const realisteWidgetWrap = document.createElement("div");
+    realisteWidgetWrap.className = "widget-wrap etalon-group";
+    realisteWidgetWrap.id = "realisteWidgetWrap";
+    realisteWidgetWrap.innerHTML = `<h2 class="widget-wrap-title etalon-group">\u041A\u0443\u043F\u0438\u0442\u044C \u0438 \u043E\u0431\u043C\u0435\u043D\u044F\u0442\u044C \u0412\u0430\u0448\u0443 \u043A\u0432\u0430\u0440\u0442\u0438\u0440\u0443</h2>
+    <div id="realisteWidget" data-widget="https://tradein.etalongroup.ru/onboarding"></div>`;
+    const realisteWidgetBtn = document.createElement("li");
+    realisteWidgetBtn.innerHTML = `<a id="#realisteWidgetWrap" class="realiste-widget-btn etalon">\u041E\u0431\u043C\u0435\u043D \u0432\u0430\u0448\u0435\u0439 \u043A\u0432\u0430\u0440\u0442\u0438\u0440\u044B</a>`;
+    let interval;
+    const init = () => {
+      const referenceNodeWidget = document.querySelector(".l-main");
+      const referenceNodeBtn = document.querySelector(".city_select li:nth-child(2)");
+      document.querySelector("body").classList.add("etalon");
+      console.log("init");
+      if (stylesheetExists(stylesheet.href) && referenceNodeWidget && referenceNodeBtn) {
+        console.log("clear interval");
+        clearInterval(interval);
+        findAndReplaceText(new RegExp('"\u042D\u0442\u0430\u043B\u043E\u0433"', "g"), "");
+        referenceNodeWidget.append(realisteWidgetWrap);
+        referenceNodeBtn.parentNode.insertBefore(realisteWidgetBtn, referenceNodeBtn);
+      }
+    };
+    interval = setInterval(init, 1e3);
+  };
+  var etalon_default = initElementsEtalon;
+
   // main-global.js
   var pageIsLoaded = (partnerName) => constants_default.PARTNERS[partnerName].some((el) => window.location.origin == el);
-  console.log("pageIsLoaded(KORTROS)");
-  console.log(pageIsLoaded("KORTROS"));
   window.onload = function() {
     if (pageIsLoaded("MR_GROUP")) {
       console.log("MR_GROUP");
@@ -370,6 +398,9 @@
     } else if (pageIsLoaded("MTSBANK")) {
       console.log("MTSBANK");
       mtsbank_default();
+    } else if (pageIsLoaded("ETALON")) {
+      console.log("ETALON");
+      etalon_default();
     }
   };
   if (pageIsLoaded("KORTROS")) {
