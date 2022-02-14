@@ -8,11 +8,9 @@ import initElementsRshb from './js/modules/rshb.js';
 import initElementsDomrfbank from './js/modules/domrfbank.js';
 import initElementsMtsbank from './js/modules/mtsbank.js';
 import initElementsKortros from './js/modules/kortros.js';
+import initElementsEtalon from './js/modules/etalon.js';
 
 const pageIsLoaded = (partnerName) => constants.PARTNERS[partnerName].some(el => window.location.origin == el);
-
-console.log('pageIsLoaded(KORTROS)');
-console.log(pageIsLoaded('KORTROS'));
 
 window.onload = function() {
   if (pageIsLoaded('MR_GROUP')) {
@@ -36,7 +34,9 @@ window.onload = function() {
   } else if (pageIsLoaded('MTSBANK')) {
     console.log('MTSBANK');
     initElementsMtsbank();
-  }
+  } else if (pageIsLoaded('ETALON')) {
+    console.log('ETALON');
+    initElementsEtalon();
 }
 
 if (pageIsLoaded('KORTROS')) {

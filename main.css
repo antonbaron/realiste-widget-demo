@@ -371,6 +371,11 @@ body.mtsbank a[aria-label='Главная страница'] {
   border-radius: 0 !important;
 }
 
+/* etalon.widget-demo styles */
+body.etalon .b-header__logo {
+  display: none;
+}
+
 @media only screen and (max-width: 767px) {
   /* raiffeisen.widget-demo styles */
   .widget-wrap.raiffeisen iframe{
@@ -467,4 +472,6 @@ body.mtsbank a[aria-label='Главная страница'] {
     padding-left: 15px;
     padding-right: 15px;
   }
+
+  /* etalon.widget-demo styles */
 }

@@ -3,5 +3,3 @@
     "esbuild": "^0.14.14"
   }
 }
-
-// .\node_modules\.bin\esbuild app.jsx --bundle --outfile=out.js

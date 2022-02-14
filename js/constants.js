@@ -26,6 +26,9 @@ export default {
     ],
     KORTROS: [
       'https://head-liner--ru.widget-demo.realiste.io'
+    ],
+    ETALON: [
+      'https://etalongroup--ru.widget-demo.realiste.io'
     ]
   }
 }
