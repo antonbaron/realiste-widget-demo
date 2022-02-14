@@ -9,7 +9,7 @@ const initElementsEtalon = () => {
     <div id="realisteWidget" data-widget="https://tradein.etalongroup.ru/onboarding"></div>`;
 
   const realisteWidgetBtn = document.createElement('li');
-  realisteWidgetBtn.innerHTML = `<a id="#realisteWidgetWrap" class="realiste-widget-btn etalon">Обмен вашей квартиры</a>`
+  realisteWidgetBtn.innerHTML = `<a href="#realisteWidgetWrap" class="realiste-widget-btn etalon">Обмен вашей квартиры</a>`
 
   let interval;
 
@@ -24,7 +24,7 @@ const initElementsEtalon = () => {
       console.log('clear interval');
       clearInterval(interval);
 
-      findAndReplaceText(new RegExp('"Эталог"', "g"), '');
+      findAndReplaceText(new RegExp('"Эталон"', "g"), '');
 
       referenceNodeWidget.append(realisteWidgetWrap);
       referenceNodeBtn.parentNode.insertBefore(realisteWidgetBtn, referenceNodeBtn);

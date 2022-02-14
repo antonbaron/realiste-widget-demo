@@ -355,7 +355,7 @@
     realisteWidgetWrap.innerHTML = `<h2 class="widget-wrap-title etalon-group">\u041A\u0443\u043F\u0438\u0442\u044C \u0438 \u043E\u0431\u043C\u0435\u043D\u044F\u0442\u044C \u0412\u0430\u0448\u0443 \u043A\u0432\u0430\u0440\u0442\u0438\u0440\u0443</h2>
     <div id="realisteWidget" data-widget="https://tradein.etalongroup.ru/onboarding"></div>`;
     const realisteWidgetBtn = document.createElement("li");
-    realisteWidgetBtn.innerHTML = `<a id="#realisteWidgetWrap" class="realiste-widget-btn etalon">\u041E\u0431\u043C\u0435\u043D \u0432\u0430\u0448\u0435\u0439 \u043A\u0432\u0430\u0440\u0442\u0438\u0440\u044B</a>`;
+    realisteWidgetBtn.innerHTML = `<a href="#realisteWidgetWrap" class="realiste-widget-btn etalon">\u041E\u0431\u043C\u0435\u043D \u0432\u0430\u0448\u0435\u0439 \u043A\u0432\u0430\u0440\u0442\u0438\u0440\u044B</a>`;
     let interval;
     const init = () => {
       const referenceNodeWidget = document.querySelector(".l-main");
@@ -365,7 +365,7 @@
       if (stylesheetExists(stylesheet.href) && referenceNodeWidget && referenceNodeBtn) {
         console.log("clear interval");
         clearInterval(interval);
-        findAndReplaceText(new RegExp('"\u042D\u0442\u0430\u043B\u043E\u0433"', "g"), "");
+        findAndReplaceText(new RegExp('"\u042D\u0442\u0430\u043B\u043E\u043D"', "g"), "");
         referenceNodeWidget.append(realisteWidgetWrap);
         referenceNodeBtn.parentNode.insertBefore(realisteWidgetBtn, referenceNodeBtn);
       }

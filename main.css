@@ -376,6 +376,11 @@ body.etalon .b-header__logo {
   display: none;
 }
 
+.widget-wrap.etalon-group {
+  max-width: 1020px;
+  margin: 0 auto;
+}
+
 @media only screen and (max-width: 767px) {
   /* raiffeisen.widget-demo styles */
   .widget-wrap.raiffeisen iframe{
@@ -474,4 +479,9 @@ body.etalon .b-header__logo {
   }
 
   /* etalon.widget-demo styles */
+  .widget-wrap-title.etalon-group {
+    scroll-margin: 60px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
 }
