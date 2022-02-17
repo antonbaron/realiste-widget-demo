@@ -49,7 +49,7 @@
     widget: {
       title: "\u041A\u0443\u043F\u0438\u0442\u044C \u0438 \u043E\u0431\u043C\u0435\u043D\u044F\u0442\u044C \u0412\u0430\u0448\u0443 \u043A\u0432\u0430\u0440\u0442\u0438\u0440\u0443",
       url: "https://gk-osnova.realiste.io/trade-up",
-      parentNode: document.querySelector(".l-main")
+      parentNode: document.querySelector(".dev-page")
     },
     className: "gk-osnova",
     textReplace: "\u0413\u041A \xAB\u041E\u0421\u041D\u041E\u0412\u0410\xBB"
