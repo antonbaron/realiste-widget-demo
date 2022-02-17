@@ -1,5 +1,7 @@
 import constants from './js/constants.js';
 
+import gk_osnova_config from './js/config/gk-osnova.js';
+
 import initElementsMrGroup from './js/modules/mr-group.js';
 import initElementsRaiffeisen from './js/modules/raiffeisen.js';
 import initElementsScor from './js/modules/scor.js';
@@ -9,6 +11,8 @@ import initElementsDomrfbank from './js/modules/domrfbank.js';
 import initElementsMtsbank from './js/modules/mtsbank.js';
 import initElementsKortros from './js/modules/kortros.js';
 import initElementsEtalon from './js/modules/etalon.js';
+
+import partnerTemplate from './js/partner-template.js';
 
 const pageIsLoaded = (partnerName) => constants.PARTNERS[partnerName].some(el => window.location.origin == el);
 
@@ -37,6 +41,9 @@ window.onload = function() {
   } else if (pageIsLoaded('ETALON')) {
     console.log('ETALON');
     initElementsEtalon();
+  } else if (pageIsLoaded('GK_OSNOVA')) {
+    console.log('GK_OSNOVA');
+    partnerTemplate(gk_osnova_config);
   }
 }
 

@@ -29,6 +29,9 @@ export default {
     ],
     ETALON: [
       'https://etalongroup--ru.widget-demo.realiste.io'
+    ],
+    GK_OSNOVA: [
+      'https://gk-osnova--ru.widget-demo.realiste.io'
     ]
   }
 }
