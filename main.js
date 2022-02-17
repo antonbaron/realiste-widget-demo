@@ -413,8 +413,8 @@
     const realisteWidgetBtn = realisteWidgetBtnOuter || realisteWidgetBtnInner;
     let interval;
     const init = () => {
-      const referenceNodeParentNode = args.widget.parentNode;
-      const referenceNodeBtn = args.btn.referenceNode;
+      const referenceNodeParentNode = document.querySelector(".dev-page");
+      const referenceNodeBtn = document.querySelector(".menu-top__nav .menu-element__wrapper.menu-top__elem:nth-child(2)");
       document.querySelector("body").classList.add(args.className);
       console.log(`init ${args.className}`);
       if (stylesheetExists(stylesheet.href) && referenceNodeParentNode && referenceNodeBtn) {
