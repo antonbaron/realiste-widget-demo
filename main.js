@@ -31,8 +31,28 @@
       ],
       ETALON: [
         "https://etalongroup--ru.widget-demo.realiste.io"
+      ],
+      GK_OSNOVA: [
+        "https://gk-osnova--ru.widget-demo.realiste.io"
       ]
     }
+  };
+
+  // js/config/gk-osnova.js
+  var gk_osnova_default = {
+    btn: {
+      title: "\u041E\u0431\u043C\u0435\u043D \u0432\u0430\u0448\u0435\u0439 \u043A\u0432\u0430\u0440\u0442\u0438\u0440\u044B",
+      container: document.createElement("li"),
+      referenceNode: document.querySelector(".menu-top__nav .menu-element__wrapper.menu-top__elem:nth-child(2)"),
+      className: "realiste-widget-btn gk-osnova menu-element"
+    },
+    widget: {
+      title: "\u041A\u0443\u043F\u0438\u0442\u044C \u0438 \u043E\u0431\u043C\u0435\u043D\u044F\u0442\u044C \u0412\u0430\u0448\u0443 \u043A\u0432\u0430\u0440\u0442\u0438\u0440\u0443",
+      url: "https://gk-osnova.realiste.io/trade-up",
+      parentNode: document.querySelector(".l-main")
+    },
+    className: "gk-osnova",
+    textReplace: "\u0413\u041A \xAB\u041E\u0421\u041D\u041E\u0412\u0410\xBB"
   };
 
   // js/modules/common.js
@@ -374,6 +394,39 @@
   };
   var etalon_default = initElementsEtalon;
 
+  // js/partner-template.js
+  var partnerTemplate = (args) => {
+    const realisteWidgetWrap = document.createElement("div");
+    realisteWidgetWrap.className = `widget-wrap ${args.className}`;
+    realisteWidgetWrap.id = "realisteWidgetWrap";
+    realisteWidgetWrap.innerHTML = `<h2 class="widget-wrap-title ${args.className}">${args.widget.title}</h2><div id="realisteWidget" data-widget=${args.widget.url}></div>`;
+    const realisteWidgetBtnOuter = args.btn.container || null;
+    const realisteWidgetBtnInner = document.createElement("a");
+    realisteWidgetBtnInner.href = "#realisteWidgetWrap";
+    realisteWidgetBtnInner.className = args.btn.className;
+    realisteWidgetBtnInner.innerHTML = args.btn.title;
+    if (realisteWidgetBtnOuter) {
+      realisteWidgetBtnOuter.append(realisteWidgetBtnInner);
+    }
+    const realisteWidgetBtn = realisteWidgetBtnOuter || realisteWidgetBtnInner;
+    let interval;
+    const init = () => {
+      const referenceNodeParentNode = args.widget.parentNode;
+      const referenceNodeBtn = args.btn.referenceNode;
+      document.querySelector("body").classList.add(args.className);
+      console.log(`init ${args.className}`);
+      if (stylesheetExists(stylesheet.href) && referenceNodeParentNode && referenceNodeBtn) {
+        console.log("clear interval");
+        clearInterval(interval);
+        findAndReplaceText(new RegExp(args.textReplace, "g"), "");
+        referenceNodeParentNode.append(realisteWidgetWrap);
+        referenceNodeBtn.parentNode.insertBefore(realisteWidgetBtn, referenceNodeBtn);
+      }
+    };
+    interval = setInterval(init, 1e3);
+  };
+  var partner_template_default = partnerTemplate;
+
   // main-global.js
   var pageIsLoaded = (partnerName) => constants_default.PARTNERS[partnerName].some((el) => window.location.origin == el);
   window.onload = function() {
@@ -401,6 +454,9 @@
     } else if (pageIsLoaded("ETALON")) {
       console.log("ETALON");
       etalon_default();
+    } else if (pageIsLoaded("GK_OSNOVA")) {
+      console.log("GK_OSNOVA");
+      partner_template_default(gk_osnova_default);
     }
   };
   if (pageIsLoaded("KORTROS")) {

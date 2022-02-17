@@ -1,4 +1,4 @@
-import { stylesheet, stylesheetExists, findAndReplaceText } from './common.js';
+import { stylesheet, stylesheetExists, findAndReplaceText } from './modules/common.js';
 
 const partnerTemplate = (args) => {
   const realisteWidgetWrap = document.createElement('div');
