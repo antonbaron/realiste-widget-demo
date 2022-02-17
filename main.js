@@ -44,13 +44,13 @@
       title: "\u041E\u0431\u043C\u0435\u043D \u0432\u0430\u0448\u0435\u0439 \u043A\u0432\u0430\u0440\u0442\u0438\u0440\u044B",
       container: document.createElement("div"),
       containerClassName: "menu-element__wrapper menu-top__elem",
-      referenceNode: document.querySelector(".menu-top__nav .menu-element__wrapper.menu-top__elem:nth-child(2)"),
+      referenceNode: ".menu-top__nav .menu-element__wrapper.menu-top__elem:nth-child(2)",
       className: "realiste-widget-btn gk-osnova menu-element"
     },
     widget: {
       title: "\u041A\u0443\u043F\u0438\u0442\u044C \u0438 \u043E\u0431\u043C\u0435\u043D\u044F\u0442\u044C \u0412\u0430\u0448\u0443 \u043A\u0432\u0430\u0440\u0442\u0438\u0440\u0443",
       url: "https://gk-osnova.realiste.io/trade-up",
-      parentNode: document.querySelector(".dev-page")
+      parentNode: ".dev-page"
     },
     className: "gk-osnova",
     textReplace: "\u0413\u041A \xAB\u041E\u0421\u041D\u041E\u0412\u0410\xBB"
@@ -413,8 +413,8 @@
     const realisteWidgetBtn = realisteWidgetBtnOuter || realisteWidgetBtnInner;
     let interval;
     const init = () => {
-      const referenceNodeParentNode = document.querySelector(".dev-page");
-      const referenceNodeBtn = document.querySelector(".menu-top__nav .menu-element__wrapper.menu-top__elem:nth-child(2)");
+      const referenceNodeParentNode = document.querySelector(args.widget.parentNode);
+      const referenceNodeBtn = document.querySelector(args.btn.referenceNode);
       document.querySelector("body").classList.add(args.className);
       console.log(`init ${args.className}`);
       if (stylesheetExists(stylesheet.href) && referenceNodeParentNode && referenceNodeBtn) {

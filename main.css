@@ -381,6 +381,45 @@ body.etalon .b-header__logo {
   margin: 0 auto;
 }
 
+/* gk-osnova.widget-demo styles */
+body.gk-osnova .menu-top__logo {
+  display: none;
+}
+
+.widget-wrap.gk-osnova {
+  max-width: 1556px;
+  margin: 0 auto;
+  border: none;
+}
+
+.widget-wrap-title.gk-osnova {
+  font-size: 36px;
+  line-height: 1.3;
+  letter-spacing: .03em;
+  text-transform: uppercase;
+  font-weight: 300;
+}
+
+.realiste-widget-btn.gk-osnova {
+  position: relative;
+}
+
+.realiste-widget-btn.gk-osnova:after {
+  content: '';
+  width: 20px;
+  height: 2px;
+  background-color: initial;
+  position: absolute;
+  top: calc(50% + 14px);
+  left: 0;
+  transition: width .6s ease;
+}
+
+.realiste-widget-btn.gk-osnova:hover:after {
+  background-color: #fff;
+  width: 100%;
+}
+
 @media only screen and (max-width: 767px) {
   /* raiffeisen.widget-demo styles */
   .widget-wrap.raiffeisen iframe{
@@ -486,5 +525,21 @@ body.etalon .b-header__logo {
   .widget-wrap-title.etalon-group {
     padding-left: 20px;
     padding-right: 20px;
+  }
+
+  /* gk-osnova.widget-demo styles */
+  .widget-wrap.gk-osnova iframe {
+    border-radius: 0;
+  }
+
+  .widget-wrap-title.gk-osnova {
+    font-size: 20px;
+    line-height: 28px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .realiste-widget-btn.gk-osnova:after {
+    display: none;
   }
 }

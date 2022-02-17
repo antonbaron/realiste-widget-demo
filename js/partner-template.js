@@ -25,8 +25,8 @@ const partnerTemplate = (args) => {
   let interval;
 
   const init = () => {
-    const referenceNodeParentNode = document.querySelector('.dev-page');
-    const referenceNodeBtn = document.querySelector('.menu-top__nav .menu-element__wrapper.menu-top__elem:nth-child(2)');
+    const referenceNodeParentNode = document.querySelector(args.widget.parentNode);
+    const referenceNodeBtn = document.querySelector(args.btn.referenceNode);
 
     document.querySelector('body').classList.add(args.className);
 
