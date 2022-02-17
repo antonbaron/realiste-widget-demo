@@ -402,22 +402,18 @@ body.gk-osnova .menu-top__logo {
 
 .realiste-widget-btn.gk-osnova {
   position: relative;
+  background: #c92335;
+  display: inline-block;
+  vertical-align: top;
+  color: #fff;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: 200;
+  padding: 10px 15px;
 }
 
-.realiste-widget-btn.gk-osnova:after {
-  content: '';
-  width: 20px;
-  height: 2px;
-  background-color: initial;
-  position: absolute;
-  top: calc(50% + 14px);
-  left: 0;
-  transition: width .6s ease;
-}
-
-.realiste-widget-btn.gk-osnova:hover:after {
-  background-color: #fff;
-  width: 100%;
+.realiste-widget-btn.gk-osnova:hover {
+  opacity: .9;
 }
 
 @media only screen and (max-width: 767px) {
@@ -528,6 +524,10 @@ body.gk-osnova .menu-top__logo {
   }
 
   /* gk-osnova.widget-demo styles */
+  .widget-wrap.gk-osnova {
+    scroll-margin: 80px;
+  }
+
   .widget-wrap.gk-osnova iframe {
     border-radius: 0;
   }
@@ -537,9 +537,5 @@ body.gk-osnova .menu-top__logo {
     line-height: 28px;
     padding-left: 20px;
     padding-right: 20px;
-  }
-
-  .realiste-widget-btn.gk-osnova:after {
-    display: none;
   }
 }
