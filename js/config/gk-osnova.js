@@ -1,10 +1,11 @@
 export default {
   btn: {
     title: 'Обмен вашей квартиры',
-    container: document.createElement('div'),
-    containerClassName: 'menu-element__wrapper menu-top__elem',
-    referenceNode: '.menu-top__nav .menu-element__wrapper.menu-top__elem:nth-child(2)',
-    className: 'realiste-widget-btn gk-osnova menu-element'
+    // container: document.createElement('div'),
+    // containerClassName: 'menu-element__wrapper menu-top__elem',
+    parentNode: '.promo-banner__text-wrapper.promo-banner__text-wrapper--line',
+    // referenceNode: '.menu-top__nav .menu-element__wrapper.menu-top__elem:nth-child(2)',
+    className: 'realiste-widget-btn gk-osnova'
   },
   widget: {
     title: 'Купить и обменять Вашу квартиру',

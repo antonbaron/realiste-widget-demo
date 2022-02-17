@@ -42,10 +42,8 @@
   var gk_osnova_default = {
     btn: {
       title: "\u041E\u0431\u043C\u0435\u043D \u0432\u0430\u0448\u0435\u0439 \u043A\u0432\u0430\u0440\u0442\u0438\u0440\u044B",
-      container: document.createElement("div"),
-      containerClassName: "menu-element__wrapper menu-top__elem",
-      referenceNode: ".menu-top__nav .menu-element__wrapper.menu-top__elem:nth-child(2)",
-      className: "realiste-widget-btn gk-osnova menu-element"
+      parentNode: ".promo-banner__text-wrapper.promo-banner__text-wrapper--line",
+      className: "realiste-widget-btn gk-osnova"
     },
     widget: {
       title: "\u041A\u0443\u043F\u0438\u0442\u044C \u0438 \u043E\u0431\u043C\u0435\u043D\u044F\u0442\u044C \u0412\u0430\u0448\u0443 \u043A\u0432\u0430\u0440\u0442\u0438\u0440\u0443",
@@ -414,7 +412,12 @@
     let interval;
     const init = () => {
       const referenceNodeParentNode = document.querySelector(args.widget.parentNode);
-      const referenceNodeBtn = document.querySelector(args.btn.referenceNode);
+      let referenceNodeBtn;
+      if (args.btn.parentNode) {
+        referenceNodeBtn = document.querySelector(args.btn.parentNode);
+      } else {
+        referenceNodeBtn = document.querySelector(args.btn.referenceNode);
+      }
       document.querySelector("body").classList.add(args.className);
       console.log(`init ${args.className}`);
       if (stylesheetExists(stylesheet.href) && referenceNodeParentNode && referenceNodeBtn) {
@@ -422,7 +425,11 @@
         clearInterval(interval);
         findAndReplaceText(new RegExp(args.textReplace, "g"), "");
         referenceNodeParentNode.append(realisteWidgetWrap);
-        referenceNodeBtn.parentNode.insertBefore(realisteWidgetBtn, referenceNodeBtn);
+        if (args.btn.parentNode) {
+          referenceNodeBtn.append(realisteWidgetBtn);
+        } else {
+          referenceNodeBtn.parentNode.insertBefore(realisteWidgetBtn, referenceNodeBtn);
+        }
       }
     };
     interval = setInterval(init, 1e3);

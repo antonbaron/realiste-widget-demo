@@ -26,7 +26,13 @@ const partnerTemplate = (args) => {
 
   const init = () => {
     const referenceNodeParentNode = document.querySelector(args.widget.parentNode);
-    const referenceNodeBtn = document.querySelector(args.btn.referenceNode);
+    let referenceNodeBtn;
+
+    if (args.btn.parentNode) {
+      referenceNodeBtn = document.querySelector(args.btn.parentNode);
+    } else {
+      referenceNodeBtn = document.querySelector(args.btn.referenceNode);
+    }
 
     document.querySelector('body').classList.add(args.className);
 
@@ -39,7 +45,12 @@ const partnerTemplate = (args) => {
       findAndReplaceText(new RegExp(args.textReplace, "g"), '');
 
       referenceNodeParentNode.append(realisteWidgetWrap);
-      referenceNodeBtn.parentNode.insertBefore(realisteWidgetBtn, referenceNodeBtn);
+
+      if (args.btn.parentNode) {
+        referenceNodeBtn.append(realisteWidgetBtn);
+      } else {
+        referenceNodeBtn.parentNode.insertBefore(realisteWidgetBtn, referenceNodeBtn);
+      }
     }
   }
 
