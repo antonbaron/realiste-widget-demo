@@ -16,6 +16,7 @@ const partnerTemplate = (args) => {
   realisteWidgetBtnInner.innerHTML = args.btn.title;
 
   if (realisteWidgetBtnOuter) {
+    realisteWidgetBtnOuter.className = args.btn.containerClassName;
     realisteWidgetBtnOuter.append(realisteWidgetBtnInner);
   }
 

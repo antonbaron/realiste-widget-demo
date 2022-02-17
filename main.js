@@ -42,7 +42,8 @@
   var gk_osnova_default = {
     btn: {
       title: "\u041E\u0431\u043C\u0435\u043D \u0432\u0430\u0448\u0435\u0439 \u043A\u0432\u0430\u0440\u0442\u0438\u0440\u044B",
-      container: document.createElement("li"),
+      container: document.createElement("div"),
+      containerClassName: "menu-element__wrapper menu-top__elem",
       referenceNode: document.querySelector(".menu-top__nav .menu-element__wrapper.menu-top__elem:nth-child(2)"),
       className: "realiste-widget-btn gk-osnova menu-element"
     },
@@ -406,6 +407,7 @@
     realisteWidgetBtnInner.className = args.btn.className;
     realisteWidgetBtnInner.innerHTML = args.btn.title;
     if (realisteWidgetBtnOuter) {
+      realisteWidgetBtnOuter.className = args.btn.containerClassName;
       realisteWidgetBtnOuter.append(realisteWidgetBtnInner);
     }
     const realisteWidgetBtn = realisteWidgetBtnOuter || realisteWidgetBtnInner;

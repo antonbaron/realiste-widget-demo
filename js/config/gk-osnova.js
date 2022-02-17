@@ -1,7 +1,8 @@
 export default {
   btn: {
     title: 'Обмен вашей квартиры',
-    container: document.createElement('li'),
+    container: document.createElement('div'),
+    containerClassName: 'menu-element__wrapper menu-top__elem',
     referenceNode: document.querySelector('.menu-top__nav .menu-element__wrapper.menu-top__elem:nth-child(2)'),
     className: 'realiste-widget-btn gk-osnova menu-element'
   },
