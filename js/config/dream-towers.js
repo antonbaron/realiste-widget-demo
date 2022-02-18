@@ -5,7 +5,7 @@ export default {
     // containerClassName: 'realiste-widget-btn-outer uno-moscow',
     parentNode: '.top-box .tb-text .logo',
     // referenceNode: '.menu-top__nav .menu-element__wrapper.menu-top__elem:nth-child(2)',
-    className: 'realiste-widget-btn uno-moscow btn'
+    className: 'realiste-widget-btn dream-towers btn'
   },
   widget: {
     title: 'Купить и обменять Вашу квартиру',
@@ -13,6 +13,6 @@ export default {
     // parentNode: 'div.ms-main[role=main]',
     referenceNode: '#wrapper .form-box'
   },
-  className: 'uno-moscow',
+  className: 'dream-towers',
   textReplace: 'ГК «ОСНОВА»|ГК «Основа»'
 }
