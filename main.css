@@ -424,6 +424,24 @@ body.very-botsad .footer__company {
   display: none;
 }
 
+.realiste-widget-btn.very-botsad {
+  background: #fff;
+  color: #000;
+}
+
+.realiste-widget-btn.very-botsad:hover {
+  opacity: .9;
+}
+
+.widget-wrap.very-botsad {
+  text-align: center;
+  padding-top: 60px;
+}
+
+.widget-wrap-title.very-botsad {
+  font-size: 60px;
+}
+
 @media only screen and (max-width: 767px) {
   /* raiffeisen.widget-demo styles */
   .widget-wrap.raiffeisen iframe{
@@ -545,5 +563,25 @@ body.very-botsad .footer__company {
     line-height: 28px;
     padding-left: 20px;
     padding-right: 20px;
+  }
+
+  /* very-botsad.widget-demo styles */
+  .realiste-widget-btn.very-botsad {
+    background: #fff;
+    color: #000;
+  }
+
+  .realiste-widget-btn.very-botsad:hover {
+    opacity: .9;
+  }
+
+  .widget-wrap.very-botsad {
+    padding-top: 40px;
+    scroll-margin: 60px;
+  }
+
+  .widget-wrap-title.very-botsad {
+    font-size: 42px;
+    padding: 0 20px;
   }
 }
