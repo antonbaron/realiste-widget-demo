@@ -1,8 +1,8 @@
 export default {
   btn: {
     title: 'Обмен вашей квартиры',
-    // container: document.createElement('div'),
-    // containerClassName: 'menu-element__wrapper menu-top__elem',
+    container: 'div',
+    containerClassName: 'realiste-widget-btn-outer uno-moscow',
     parentNode: '.header__bottom',
     // referenceNode: '.menu-top__nav .menu-element__wrapper.menu-top__elem:nth-child(2)',
     className: 'realiste-widget-btn uno-moscow'

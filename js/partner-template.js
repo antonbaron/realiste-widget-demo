@@ -7,7 +7,7 @@ const partnerTemplate = (args) => {
   
   realisteWidgetWrap.innerHTML = `<h2 class="widget-wrap-title ${args.className}">${args.widget.title}</h2><div id="realisteWidget" data-widget=${args.widget.url}></div>`;
 
-  const realisteWidgetBtnOuter = args.btn.container || null;
+  let realisteWidgetBtnOuter = args.btn.container || null;
 
   const realisteWidgetBtnInner = document.createElement('a');
   realisteWidgetBtnInner.href = '#realisteWidgetWrap';
@@ -16,6 +16,7 @@ const partnerTemplate = (args) => {
   realisteWidgetBtnInner.innerHTML = args.btn.title;
 
   if (realisteWidgetBtnOuter) {
+    realisteWidgetBtnOuter = document.querySelector(args.btn.container);
     realisteWidgetBtnOuter.className = args.btn.containerClassName;
     realisteWidgetBtnOuter.append(realisteWidgetBtnInner);
   }

@@ -80,6 +80,8 @@
   var uno_moscow_default = {
     btn: {
       title: "\u041E\u0431\u043C\u0435\u043D \u0432\u0430\u0448\u0435\u0439 \u043A\u0432\u0430\u0440\u0442\u0438\u0440\u044B",
+      container: "div",
+      containerClassName: "realiste-widget-btn-outer uno-moscow",
       parentNode: ".header__bottom",
       className: "realiste-widget-btn uno-moscow"
     },
@@ -437,12 +439,13 @@
     realisteWidgetWrap.className = `widget-wrap ${args.className}`;
     realisteWidgetWrap.id = "realisteWidgetWrap";
     realisteWidgetWrap.innerHTML = `<h2 class="widget-wrap-title ${args.className}">${args.widget.title}</h2><div id="realisteWidget" data-widget=${args.widget.url}></div>`;
-    const realisteWidgetBtnOuter = args.btn.container || null;
+    let realisteWidgetBtnOuter = args.btn.container || null;
     const realisteWidgetBtnInner = document.createElement("a");
     realisteWidgetBtnInner.href = "#realisteWidgetWrap";
     realisteWidgetBtnInner.className = args.btn.className;
     realisteWidgetBtnInner.innerHTML = args.btn.title;
     if (realisteWidgetBtnOuter) {
+      realisteWidgetBtnOuter = document.querySelector(args.btn.container);
       realisteWidgetBtnOuter.className = args.btn.containerClassName;
       realisteWidgetBtnOuter.append(realisteWidgetBtnInner);
     }
