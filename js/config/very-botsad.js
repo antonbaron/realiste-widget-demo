@@ -3,7 +3,7 @@ export default {
     title: 'Обмен вашей квартиры',
     // container: document.createElement('div'),
     // containerClassName: 'menu-element__wrapper menu-top__elem',
-    parentNode: '.hero-home__top.d-none.d-lg-block + label',
+    parentNode: '.hero-home__top.d-none.d-lg-block',
     // referenceNode: '.menu-top__nav .menu-element__wrapper.menu-top__elem:nth-child(2)',
     className: 'realiste-widget-btn very-botsad'
   },
