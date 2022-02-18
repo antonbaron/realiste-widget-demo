@@ -1,6 +1,8 @@
 import constants from './js/constants.js';
 
 import gk_osnova_config from './js/config/gk-osnova.js';
+import very_botsad_config from './js/config/very-botsad.js';
+import uno_moscow_config from './js/config/uno-moscow.js';
 
 import initElementsMrGroup from './js/modules/mr-group.js';
 import initElementsRaiffeisen from './js/modules/raiffeisen.js';
@@ -44,6 +46,12 @@ window.onload = function() {
   } else if (pageIsLoaded('GK_OSNOVA')) {
     console.log('GK_OSNOVA');
     partnerTemplate(gk_osnova_config);
+  } else if (pageIsLoaded('VERY_BOTSAD')) {
+    console.log('VERY_BOTSAD');
+    partnerTemplate(very_botsad_config);
+  } else if (pageIsLoaded('UNO_MOSCOW')) {
+    console.log('UNO_MOSCOW');
+    partnerTemplate(uno_moscow_config);
   }
 }
 

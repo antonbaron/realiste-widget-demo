@@ -32,6 +32,12 @@ export default {
     ],
     GK_OSNOVA: [
       'https://gk-osnova--ru.widget-demo.realiste.io'
+    ],
+    VERY_BOTSAD: [
+      'https://very-botsad--ru.widget-demo.realiste.io'
+    ],
+    UNO_MOSCOW: [
+      'https://uno--moscow.widget-demo.realiste.io'
     ]
   }
 }

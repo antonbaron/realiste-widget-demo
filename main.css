@@ -382,7 +382,8 @@ body.etalon .b-header__logo {
 }
 
 /* gk-osnova.widget-demo styles */
-body.gk-osnova .menu-top__logo {
+body.gk-osnova .menu-top__logo,
+body.gk-osnova .footer__logo {
   display: none;
 }
 
@@ -414,6 +415,13 @@ body.gk-osnova .menu-top__logo {
 
 .realiste-widget-btn.gk-osnova:hover {
   opacity: .9;
+}
+
+/* very-botsad.widget-demo styles */
+body.very-botsad .header__logo,
+body.very-botsad .footer__logo,
+body.very-botsad .footer__company {
+  display: none;
 }
 
 @media only screen and (max-width: 767px) {
