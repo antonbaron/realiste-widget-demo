@@ -501,6 +501,7 @@ body.dream-towers .flogo {
 
 .widget-wrap.dream-towers {
   padding-top: 60px;
+  border: 0;
 }
 
 .widget-wrap-title.dream-towers {
@@ -669,12 +670,14 @@ body.dream-towers .flogo {
 
   /* dream-towers.widget-demo styles */
   .widget-wrap.dream-towers {
-    padding-top: 60px;
+    padding-top: 40px;
+    scroll-margin: 60px;
   }
 
   .widget-wrap-title.dream-towers {
     font-weight: 300;
     padding: 0 20px;
     text-align: center;
+    font-size: 30px;
   }
 }
