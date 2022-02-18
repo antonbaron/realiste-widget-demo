@@ -483,9 +483,16 @@ body.uno-moscow .footer-block-menu__logo-link {
 }
 
 /* dream-towers.widget-demo styles */
+body.dream-towers .logo a:not(.realiste-widget-btn.dream-towers),
+body.dream-towers .flogo {
+  display: none;
+}
+
 .realiste-widget-btn.dream-towers {
   background: #D39961;
-  filter: brightness(1.2);
+  width: auto;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 .realiste-widget-btn.dream-towers:hover {
