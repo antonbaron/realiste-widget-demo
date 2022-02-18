@@ -26,7 +26,7 @@ const partnerTemplate = (args) => {
   let interval;
 
   const init = () => {
-    const referenceNodeParentNode = document.querySelector(args.widget.parentNode);
+    let referenceNodeWidget;
     let referenceNodeBtn;
 
     if (args.btn.parentNode) {
@@ -35,22 +35,32 @@ const partnerTemplate = (args) => {
       referenceNodeBtn = document.querySelector(args.btn.referenceNode);
     }
 
+    if (args.widget.parentNode) {
+      referenceNodeWidget = document.querySelector(args.widget.parentNode);
+    } else {
+      referenceNodeWidget = document.querySelector(args.widget.referenceNode);
+    }
+
     document.querySelector('body').classList.add(args.className);
 
     console.log(`init ${args.className}`);
 
-    if (stylesheetExists(stylesheet.href) && referenceNodeParentNode && referenceNodeBtn) {
+    if (stylesheetExists(stylesheet.href) && referenceNodeWidget && referenceNodeBtn) {
       console.log('clear interval');
       clearInterval(interval);
 
       findAndReplaceText(new RegExp(args.textReplace, "g"), '');
 
-      referenceNodeParentNode.append(realisteWidgetWrap);
-
       if (args.btn.parentNode) {
         referenceNodeBtn.append(realisteWidgetBtn);
       } else {
         referenceNodeBtn.parentNode.insertBefore(realisteWidgetBtn, referenceNodeBtn);
+      }
+
+      if (args.widget.parentNode) {
+        referenceNodeWidget.append(realisteWidgetWrap);
+      } else {
+        referenceNodeWidget.parentNode.insertBefore(realisteWidgetWrap, referenceNodeWidget);
       }
     }
   }

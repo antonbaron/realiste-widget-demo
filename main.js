@@ -40,6 +40,9 @@
       ],
       UNO_MOSCOW: [
         "https://uno--moscow.widget-demo.realiste.io"
+      ],
+      DREAM_TOWERS: [
+        "https://dream-towers--ru.widget-demo.realiste.io"
       ]
     }
   };
@@ -89,6 +92,22 @@
       title: "\u041A\u0443\u043F\u0438\u0442\u044C \u0438 \u043E\u0431\u043C\u0435\u043D\u044F\u0442\u044C \u0412\u0430\u0448\u0443 \u043A\u0432\u0430\u0440\u0442\u0438\u0440\u0443",
       url: "https://gk-osnova.realiste.io/trade-up",
       parentNode: "div.ms-main[role=main]"
+    },
+    className: "uno-moscow",
+    textReplace: "\u0413\u041A \xAB\u041E\u0421\u041D\u041E\u0412\u0410\xBB|\u0413\u041A \xAB\u041E\u0441\u043D\u043E\u0432\u0430\xBB"
+  };
+
+  // js/config/dream-towers.js
+  var dream_towers_default = {
+    btn: {
+      title: "\u041E\u0431\u043C\u0435\u043D \u0432\u0430\u0448\u0435\u0439 \u043A\u0432\u0430\u0440\u0442\u0438\u0440\u044B",
+      parentNode: ".top-box .tb-text .logo",
+      className: "realiste-widget-btn uno-moscow btn"
+    },
+    widget: {
+      title: "\u041A\u0443\u043F\u0438\u0442\u044C \u0438 \u043E\u0431\u043C\u0435\u043D\u044F\u0442\u044C \u0412\u0430\u0448\u0443 \u043A\u0432\u0430\u0440\u0442\u0438\u0440\u0443",
+      url: "https://dream-towers.realiste.io/trade-up",
+      referenceNode: "#wrapper .form-box"
     },
     className: "uno-moscow",
     textReplace: "\u0413\u041A \xAB\u041E\u0421\u041D\u041E\u0412\u0410\xBB|\u0413\u041A \xAB\u041E\u0441\u043D\u043E\u0432\u0430\xBB"
@@ -452,24 +471,33 @@
     const realisteWidgetBtn = realisteWidgetBtnOuter || realisteWidgetBtnInner;
     let interval;
     const init = () => {
-      const referenceNodeParentNode = document.querySelector(args.widget.parentNode);
+      let referenceNodeWidget;
       let referenceNodeBtn;
       if (args.btn.parentNode) {
         referenceNodeBtn = document.querySelector(args.btn.parentNode);
       } else {
         referenceNodeBtn = document.querySelector(args.btn.referenceNode);
       }
+      if (args.widget.parentNode) {
+        referenceNodeWidget = document.querySelector(args.widget.parentNode);
+      } else {
+        referenceNodeWidget = document.querySelector(args.widget.referenceNode);
+      }
       document.querySelector("body").classList.add(args.className);
       console.log(`init ${args.className}`);
-      if (stylesheetExists(stylesheet.href) && referenceNodeParentNode && referenceNodeBtn) {
+      if (stylesheetExists(stylesheet.href) && referenceNodeWidget && referenceNodeBtn) {
         console.log("clear interval");
         clearInterval(interval);
         findAndReplaceText(new RegExp(args.textReplace, "g"), "");
-        referenceNodeParentNode.append(realisteWidgetWrap);
         if (args.btn.parentNode) {
           referenceNodeBtn.append(realisteWidgetBtn);
         } else {
           referenceNodeBtn.parentNode.insertBefore(realisteWidgetBtn, referenceNodeBtn);
+        }
+        if (args.widget.parentNode) {
+          referenceNodeWidget.append(realisteWidgetWrap);
+        } else {
+          referenceNodeWidget.parentNode.insertBefore(realisteWidgetWrap, referenceNodeWidget);
         }
       }
     };
@@ -513,6 +541,9 @@
     } else if (pageIsLoaded("UNO_MOSCOW")) {
       console.log("UNO_MOSCOW");
       partner_template_default(uno_moscow_default);
+    } else if (pageIsLoaded("DREAM_TOWERS")) {
+      console.log("DREAM_TOWERS");
+      partner_template_default(dream_towers_default);
     }
   };
   if (pageIsLoaded("KORTROS")) {

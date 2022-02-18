@@ -1,0 +1,18 @@
+export default {
+  btn: {
+    title: 'Обмен вашей квартиры',
+    // container: 'div',
+    // containerClassName: 'realiste-widget-btn-outer uno-moscow',
+    parentNode: '.top-box .tb-text .logo',
+    // referenceNode: '.menu-top__nav .menu-element__wrapper.menu-top__elem:nth-child(2)',
+    className: 'realiste-widget-btn uno-moscow btn'
+  },
+  widget: {
+    title: 'Купить и обменять Вашу квартиру',
+    url: 'https://dream-towers.realiste.io/trade-up',
+    // parentNode: 'div.ms-main[role=main]',
+    referenceNode: '#wrapper .form-box'
+  },
+  className: 'uno-moscow',
+  textReplace: 'ГК «ОСНОВА»|ГК «Основа»'
+}

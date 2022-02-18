@@ -3,6 +3,7 @@ import constants from './js/constants.js';
 import gk_osnova_config from './js/config/gk-osnova.js';
 import very_botsad_config from './js/config/very-botsad.js';
 import uno_moscow_config from './js/config/uno-moscow.js';
+import dream_towers_config from './js/config/dream-towers.js';
 
 import initElementsMrGroup from './js/modules/mr-group.js';
 import initElementsRaiffeisen from './js/modules/raiffeisen.js';
@@ -52,7 +53,10 @@ window.onload = function() {
   } else if (pageIsLoaded('UNO_MOSCOW')) {
     console.log('UNO_MOSCOW');
     partnerTemplate(uno_moscow_config);
-  }
+  } else if (pageIsLoaded('DREAM_TOWERS')) {
+    console.log('DREAM_TOWERS');
+    partnerTemplate(dream_towers_config);
+  } 
 }
 
 if (pageIsLoaded('KORTROS')) {

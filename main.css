@@ -482,6 +482,29 @@ body.uno-moscow .footer-block-menu__logo-link {
   margin: 0 auto;
 }
 
+/* dream-towers.widget-demo styles */
+.realiste-widget-btn.dream-towers {
+  background: #D39961;
+  filter: brightness(1.2);
+}
+
+.realiste-widget-btn.dream-towers:hover {
+  opacity: .9;
+}
+
+.widget-wrap.dream-towers {
+  padding-top: 60px;
+}
+
+.widget-wrap-title.dream-towers {
+  max-width: 1310px;
+  margin: 0 auto;
+  font-weight: 300;
+  font-size: 60px;
+  line-height: 1.1;
+  color: #D39961;
+}
+
 @media screen and (min-width: 992px) {
   .realiste-widget-btn.uno-moscow {
     margin-left: -20px;
@@ -623,8 +646,9 @@ body.uno-moscow .footer-block-menu__logo-link {
   }
 
   /* uno-moscow.widget-demo styles */
-  .realiste-widget-btn.uno-moscow {
-    
+  .realiste-widget-btn-outer.uno-moscow {
+    width: 100%;
+    padding-top: 10px;
   }
 
   .widget-wrap.uno-moscow {
@@ -634,5 +658,16 @@ body.uno-moscow .footer-block-menu__logo-link {
   .widget-wrap-title.uno-moscow {
     font-size: 24px;
     padding: 0 20px;
+  }
+
+  /* dream-towers.widget-demo styles */
+  .widget-wrap.dream-towers {
+    padding-top: 60px;
+  }
+
+  .widget-wrap-title.dream-towers {
+    font-weight: 300;
+    padding: 0 20px;
+    text-align: center;
   }
 }

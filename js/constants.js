@@ -38,6 +38,9 @@ export default {
     ],
     UNO_MOSCOW: [
       'https://uno--moscow.widget-demo.realiste.io'
+    ],
+    DREAM_TOWERS: [
+      'https://dream-towers--ru.widget-demo.realiste.io'
     ]
   }
 }
