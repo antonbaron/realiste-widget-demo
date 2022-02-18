@@ -64,8 +64,8 @@
   var very_botsad_default = {
     btn: {
       title: "\u041E\u0431\u043C\u0435\u043D \u0432\u0430\u0448\u0435\u0439 \u043A\u0432\u0430\u0440\u0442\u0438\u0440\u044B",
-      parentNode: ".hero-home__top.d-none.d-lg-block",
-      className: "realiste-widget-btn very-botsad"
+      parentNode: ".home-block.py-0.text-white.hero-home .btns-list.d-md-flex.justify-content-center",
+      className: "realiste-widget-btn very-botsad btn"
     },
     widget: {
       title: "\u041A\u0443\u043F\u0438\u0442\u044C \u0438 \u043E\u0431\u043C\u0435\u043D\u044F\u0442\u044C \u0412\u0430\u0448\u0443 \u043A\u0432\u0430\u0440\u0442\u0438\u0440\u0443",
