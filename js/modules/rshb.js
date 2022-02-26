@@ -7,7 +7,7 @@ const initElementsRshb = () => {
   
   realisteWidgetWrap.innerHTML = `<div class="widget-wrap-inner">
     <p class="widget-wrap-title">Купить и обменять Вашу квартиру</p>
-    <div id="realisteWidget" data-widget="https://rshb.realiste.io/object-evaluation"></div></div>`;
+    <div id="realisteWidget" data-widget="https://rshb.realiste.ai/object-evaluation"></div></div>`;
 
   const realisteWidgetBtn = document.createElement('a');
   realisteWidgetBtn.href = '#realisteWidgetWrap';

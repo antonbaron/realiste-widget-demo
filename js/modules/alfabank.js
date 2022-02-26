@@ -7,7 +7,7 @@ const initElementsAlfabank = () => {
   
   realisteWidgetWrap.innerHTML = `<div class="b-block-text container">
     <p class="widget-wrap-title">Купить и обменять Вашу квартиру</p>
-    <div id="realisteWidget" data-widget="https://alfabank.realiste.io/trade-up"></div>
+    <div id="realisteWidget" data-widget="https://alfabank.realiste.ai/trade-up"></div>
   </div>`;
 
   const realisteWidgetBtn = document.createElement('a');

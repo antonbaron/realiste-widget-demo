@@ -25,7 +25,7 @@ const initElementsKortros = () => {
   realisteWidgetWrap.id = 'realisteWidgetWrap';
   
   realisteWidgetWrap.innerHTML = `<h2 class="block-title widget-wrap-title kortros">Купить и обменять Вашу квартиру</h2>
-    <div id="realisteWidget" data-widget="https://kortros.realiste.io/trade-up"></div>`;
+    <div id="realisteWidget" data-widget="https://kortros.realiste.ai/trade-up"></div>`;
 
   let interval;
 

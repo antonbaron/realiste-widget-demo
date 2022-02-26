@@ -9,7 +9,7 @@ export default {
   },
   widget: {
     title: 'Купить и обменять Вашу квартиру',
-    url: 'https://gk-osnova.realiste.io/trade-up',
+    url: 'https://gk-osnova.realiste.ai/trade-up',
     parentNode: '.dev-page'
   },
   className: 'gk-osnova',

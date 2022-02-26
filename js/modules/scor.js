@@ -10,7 +10,7 @@ const initElementsScor = () => {
       clearInterval(interval);
 
       formWrap.innerHTML = `<div class="widget-wrap scor" id="realisteWidgetWrap">
-        <div id="realisteWidget" data-widget="https://scor.realiste.io/"></div>
+        <div id="realisteWidget" data-widget="https://scor.realiste.ai/"></div>
       </div>`;
     }
   }

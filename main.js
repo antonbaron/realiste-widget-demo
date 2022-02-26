@@ -3,46 +3,46 @@
   var constants_default = {
     PARTNERS: {
       MR_GROUP: [
-        "https://mr-group.widget-demo.realiste.io",
-        "https://www--mr-group--ru.widget-demo.realiste.io"
+        "https://mr-group.widget-demo.realiste.ai",
+        "https://www--mr-group--ru.widget-demo.realiste.ai"
       ],
       RAIFFEISEN: [
-        "https://raiffeisen.widget-demo.realiste.io",
-        "https://www--raiffeisen--ru.widget-demo.realiste.io"
+        "https://raiffeisen.widget-demo.realiste.ai",
+        "https://www--raiffeisen--ru.widget-demo.realiste.ai"
       ],
       SCOR: [
-        "https://scor.widget-demo.realiste.io",
-        "https://scor--ru.widget-demo.realiste.io"
+        "https://scor.widget-demo.realiste.ai",
+        "https://scor--ru.widget-demo.realiste.ai"
       ],
       ALFABANK: [
-        "https://alfabank--ru.widget-demo.realiste.io"
+        "https://alfabank--ru.widget-demo.realiste.ai"
       ],
       RSHB: [
-        "https://www--rshb--ru.widget-demo.realiste.io"
+        "https://www--rshb--ru.widget-demo.realiste.ai"
       ],
       DOMRFBANK: [
-        "https://domrfbank--ru.widget-demo.realiste.io"
+        "https://domrfbank--ru.widget-demo.realiste.ai"
       ],
       MTSBANK: [
-        "https://www--mtsbank--ru.widget-demo.realiste.io"
+        "https://www--mtsbank--ru.widget-demo.realiste.ai"
       ],
       KORTROS: [
-        "https://head-liner--ru.widget-demo.realiste.io"
+        "https://head-liner--ru.widget-demo.realiste.ai"
       ],
       ETALON: [
-        "https://etalongroup--ru.widget-demo.realiste.io"
+        "https://etalongroup--ru.widget-demo.realiste.ai"
       ],
       GK_OSNOVA: [
-        "https://gk-osnova--ru.widget-demo.realiste.io"
+        "https://gk-osnova--ru.widget-demo.realiste.ai"
       ],
       VERY_BOTSAD: [
-        "https://very-botsad--ru.widget-demo.realiste.io"
+        "https://very-botsad--ru.widget-demo.realiste.ai"
       ],
       UNO_MOSCOW: [
-        "https://uno--moscow.widget-demo.realiste.io"
+        "https://uno--moscow.widget-demo.realiste.ai"
       ],
       DREAM_TOWERS: [
-        "https://dream-towers--ru.widget-demo.realiste.io"
+        "https://dream-towers--ru.widget-demo.realiste.ai"
       ]
     }
   };
@@ -56,7 +56,7 @@
     },
     widget: {
       title: "\u041A\u0443\u043F\u0438\u0442\u044C \u0438 \u043E\u0431\u043C\u0435\u043D\u044F\u0442\u044C \u0412\u0430\u0448\u0443 \u043A\u0432\u0430\u0440\u0442\u0438\u0440\u0443",
-      url: "https://gk-osnova.realiste.io/trade-up",
+      url: "https://gk-osnova.realiste.ai/trade-up",
       parentNode: ".dev-page"
     },
     className: "gk-osnova",
@@ -72,7 +72,7 @@
     },
     widget: {
       title: "\u041A\u0443\u043F\u0438\u0442\u044C \u0438 \u043E\u0431\u043C\u0435\u043D\u044F\u0442\u044C \u0412\u0430\u0448\u0443 \u043A\u0432\u0430\u0440\u0442\u0438\u0440\u0443",
-      url: "https://gk-osnova.realiste.io/trade-up",
+      url: "https://gk-osnova.realiste.ai/trade-up",
       parentNode: "main.main.my-0"
     },
     className: "very-botsad",
@@ -90,7 +90,7 @@
     },
     widget: {
       title: "\u041A\u0443\u043F\u0438\u0442\u044C \u0438 \u043E\u0431\u043C\u0435\u043D\u044F\u0442\u044C \u0412\u0430\u0448\u0443 \u043A\u0432\u0430\u0440\u0442\u0438\u0440\u0443",
-      url: "https://gk-osnova.realiste.io/trade-up",
+      url: "https://gk-osnova.realiste.ai/trade-up",
       parentNode: "div.ms-main[role=main]"
     },
     className: "uno-moscow",
@@ -106,7 +106,7 @@
     },
     widget: {
       title: "\u041A\u0443\u043F\u0438\u0442\u044C \u0438 \u043E\u0431\u043C\u0435\u043D\u044F\u0442\u044C \u0412\u0430\u0448\u0443 \u043A\u0432\u0430\u0440\u0442\u0438\u0440\u0443",
-      url: "https://dream-towers.realiste.io/trade-up",
+      url: "https://dream-towers.realiste.ai/trade-up",
       referenceNode: "#wrapper .form-box"
     },
     className: "dream-towers",
@@ -191,7 +191,7 @@
     const realisteWidgetWrap = document.createElement("div");
     realisteWidgetWrap.className = "widget-wrap";
     realisteWidgetWrap.id = "realisteWidgetWrap";
-    realisteWidgetWrap.innerHTML = '<div id="realisteWidget" data-widget="https://mr-group.realiste.io/"></div>';
+    realisteWidgetWrap.innerHTML = '<div id="realisteWidget" data-widget="https://mr-group.realiste.ai/"></div>';
     const tradeInButton = document.createElement("a");
     tradeInButton.className = "btn-custom btn-trade-in scroll-to";
     tradeInButton.href = "#realisteWidgetWrap";
@@ -210,7 +210,7 @@
       if (projectsContent)
         projectsContent.append(tradeUpColumns);
       if (menuProjectsTitle)
-        menuProjectsTitle.innerHTML = '<a href="https://mr-group.realiste.io/#/object-evaluation?locale=ru" target="_blank">Trade In</a>';
+        menuProjectsTitle.innerHTML = '<a href="https://mr-group.realiste.ai/#/object-evaluation?locale=ru" target="_blank">Trade In</a>';
       if (oneProjectRoomTypes)
         oneProjectRoomTypes.append(tradeUpColumns);
       if (catalogItemInfoTitle)
@@ -232,7 +232,7 @@
     realisteWidgetWrap.id = "realisteWidgetWrap";
     realisteWidgetWrap.innerHTML = `<div class="b-block-text container">
     <h2 class="e-title e-title--h2">\u041A\u0443\u043F\u0438\u0442\u044C \u0438 \u043E\u0431\u043C\u0435\u043D\u044F\u0442\u044C \u0412\u0430\u0448\u0443 \u043A\u0432\u0430\u0440\u0442\u0438\u0440\u0443</h2>
-    <div id="realisteWidget" data-widget="https://raiffeisen.realiste.io/trade-up"></div>
+    <div id="realisteWidget" data-widget="https://raiffeisen.realiste.ai/trade-up"></div>
   </div>`;
     let interval;
     const init = () => {
@@ -260,7 +260,7 @@
       if (stylesheetExists(stylesheet.href) && formWrap) {
         clearInterval(interval);
         formWrap.innerHTML = `<div class="widget-wrap scor" id="realisteWidgetWrap">
-        <div id="realisteWidget" data-widget="https://scor.realiste.io/"></div>
+        <div id="realisteWidget" data-widget="https://scor.realiste.ai/"></div>
       </div>`;
       }
     };
@@ -275,7 +275,7 @@
     realisteWidgetWrap.id = "realisteWidgetWrap";
     realisteWidgetWrap.innerHTML = `<div class="b-block-text container">
     <p class="widget-wrap-title">\u041A\u0443\u043F\u0438\u0442\u044C \u0438 \u043E\u0431\u043C\u0435\u043D\u044F\u0442\u044C \u0412\u0430\u0448\u0443 \u043A\u0432\u0430\u0440\u0442\u0438\u0440\u0443</p>
-    <div id="realisteWidget" data-widget="https://alfabank.realiste.io/trade-up"></div>
+    <div id="realisteWidget" data-widget="https://alfabank.realiste.ai/trade-up"></div>
   </div>`;
     const realisteWidgetBtn = document.createElement("a");
     realisteWidgetBtn.href = "#realisteWidgetWrap";
@@ -305,7 +305,7 @@
     realisteWidgetWrap.id = "realisteWidgetWrap";
     realisteWidgetWrap.innerHTML = `<div class="widget-wrap-inner">
     <p class="widget-wrap-title">\u041A\u0443\u043F\u0438\u0442\u044C \u0438 \u043E\u0431\u043C\u0435\u043D\u044F\u0442\u044C \u0412\u0430\u0448\u0443 \u043A\u0432\u0430\u0440\u0442\u0438\u0440\u0443</p>
-    <div id="realisteWidget" data-widget="https://rshb.realiste.io/object-evaluation"></div></div>`;
+    <div id="realisteWidget" data-widget="https://rshb.realiste.ai/object-evaluation"></div></div>`;
     const realisteWidgetBtn = document.createElement("a");
     realisteWidgetBtn.href = "#realisteWidgetWrap";
     realisteWidgetBtn.className = "btn btn-success";
@@ -333,7 +333,7 @@
     realisteWidgetWrap.className = "widget-wrap domrfbank";
     realisteWidgetWrap.id = "realisteWidgetWrap";
     realisteWidgetWrap.innerHTML = `<h5 class="widget-wrap-title mortgage-list__cardtitle mortgage-list__cardtitle_wd100 mortgage-list__cardtitle_big">\u041A\u0443\u043F\u0438\u0442\u044C \u0438 \u043E\u0431\u043C\u0435\u043D\u044F\u0442\u044C \u0412\u0430\u0448\u0443 \u043A\u0432\u0430\u0440\u0442\u0438\u0440\u0443</h5>
-    <div id="realisteWidget" data-widget="https://domrfbank.realiste.io/trade-up"></div>`;
+    <div id="realisteWidget" data-widget="https://domrfbank.realiste.ai/trade-up"></div>`;
     const realisteWidgetBtn = document.createElement("a");
     realisteWidgetBtn.href = "#realisteWidgetWrap";
     realisteWidgetBtn.className = "realiste-widget-btn domrfbank tags__item button";
@@ -361,7 +361,7 @@
     realisteWidgetWrap.className = "widget-wrap mtsbank";
     realisteWidgetWrap.id = "realisteWidgetWrap";
     realisteWidgetWrap.innerHTML = `<h2 class="widget-wrap-title mtsbank">\u041A\u0443\u043F\u0438\u0442\u044C \u0438 \u043E\u0431\u043C\u0435\u043D\u044F\u0442\u044C \u0412\u0430\u0448\u0443 \u043A\u0432\u0430\u0440\u0442\u0438\u0440\u0443</h2>
-    <div id="realisteWidget" data-widget="https://mtsbank.realiste.io/trade-up"></div>`;
+    <div id="realisteWidget" data-widget="https://mtsbank.realiste.ai/trade-up"></div>`;
     const realisteWidgetBtn = document.createElement("a");
     realisteWidgetBtn.href = "#realisteWidgetWrap";
     realisteWidgetBtn.className = "realiste-widget-btn mtsbank";
@@ -409,7 +409,7 @@
     realisteWidgetWrap.className = "widget-wrap kortros";
     realisteWidgetWrap.id = "realisteWidgetWrap";
     realisteWidgetWrap.innerHTML = `<h2 class="block-title widget-wrap-title kortros">\u041A\u0443\u043F\u0438\u0442\u044C \u0438 \u043E\u0431\u043C\u0435\u043D\u044F\u0442\u044C \u0412\u0430\u0448\u0443 \u043A\u0432\u0430\u0440\u0442\u0438\u0440\u0443</h2>
-    <div id="realisteWidget" data-widget="https://kortros.realiste.io/trade-up"></div>`;
+    <div id="realisteWidget" data-widget="https://kortros.realiste.ai/trade-up"></div>`;
     let interval;
     const init = () => {
       const tradeUpColumnsPrependSection = document.querySelector(".page.main-page .infrastructure");

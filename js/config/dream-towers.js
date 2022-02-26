@@ -9,7 +9,7 @@ export default {
   },
   widget: {
     title: 'Купить и обменять Вашу квартиру',
-    url: 'https://dream-towers.realiste.io/trade-up',
+    url: 'https://dream-towers.realiste.ai/trade-up',
     // parentNode: 'div.ms-main[role=main]',
     referenceNode: '#wrapper .form-box'
   },

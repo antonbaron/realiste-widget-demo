@@ -6,7 +6,7 @@ const initElementsMtsbank = () => {
   realisteWidgetWrap.id = 'realisteWidgetWrap';
   
   realisteWidgetWrap.innerHTML = `<h2 class="widget-wrap-title mtsbank">Купить и обменять Вашу квартиру</h2>
-    <div id="realisteWidget" data-widget="https://mtsbank.realiste.io/trade-up"></div>`;
+    <div id="realisteWidget" data-widget="https://mtsbank.realiste.ai/trade-up"></div>`;
 
   const realisteWidgetBtn = document.createElement('a');
   realisteWidgetBtn.href = '#realisteWidgetWrap';

@@ -6,7 +6,7 @@ const initElementsDomrfbank = () => {
   realisteWidgetWrap.id = 'realisteWidgetWrap';
   
   realisteWidgetWrap.innerHTML = `<h5 class="widget-wrap-title mortgage-list__cardtitle mortgage-list__cardtitle_wd100 mortgage-list__cardtitle_big">Купить и обменять Вашу квартиру</h5>
-    <div id="realisteWidget" data-widget="https://domrfbank.realiste.io/trade-up"></div>`;
+    <div id="realisteWidget" data-widget="https://domrfbank.realiste.ai/trade-up"></div>`;
 
   const realisteWidgetBtn = document.createElement('a');
   realisteWidgetBtn.href = '#realisteWidgetWrap';

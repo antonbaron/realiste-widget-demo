@@ -7,7 +7,7 @@ const initElementsRaiffeisen = () => {
 
   realisteWidgetWrap.innerHTML = `<div class="b-block-text container">
     <h2 class="e-title e-title--h2">Купить и обменять Вашу квартиру</h2>
-    <div id="realisteWidget" data-widget="https://raiffeisen.realiste.io/trade-up"></div>
+    <div id="realisteWidget" data-widget="https://raiffeisen.realiste.ai/trade-up"></div>
   </div>`;
 
   let interval;

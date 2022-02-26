@@ -33,7 +33,7 @@ const initElementsMrGroup = () => {
   const realisteWidgetWrap = document.createElement('div');
   realisteWidgetWrap.className = 'widget-wrap';
   realisteWidgetWrap.id = 'realisteWidgetWrap';
-  realisteWidgetWrap.innerHTML = '<div id="realisteWidget" data-widget="https://mr-group.realiste.io/"></div>';
+  realisteWidgetWrap.innerHTML = '<div id="realisteWidget" data-widget="https://mr-group.realiste.ai/"></div>';
 
   const tradeInButton = document.createElement('a');
   tradeInButton.className = 'btn-custom btn-trade-in scroll-to';
@@ -55,7 +55,7 @@ const initElementsMrGroup = () => {
   if (stylesheetExists(stylesheet.href)) {
     tradeInButtonCatalogItemInfoTitle = tradeInButton.cloneNode(true);
     if (projectsContent) projectsContent.append(tradeUpColumns);
-    if (menuProjectsTitle) menuProjectsTitle.innerHTML = '<a href="https://mr-group.realiste.io/#/object-evaluation?locale=ru" target="_blank">Trade In</a>';
+    if (menuProjectsTitle) menuProjectsTitle.innerHTML = '<a href="https://mr-group.realiste.ai/#/object-evaluation?locale=ru" target="_blank">Trade In</a>';
     if (oneProjectRoomTypes) oneProjectRoomTypes.append(tradeUpColumns);
     if (catalogItemInfoTitle) catalogItemInfoTitle.prepend(tradeInButtonCatalogItemInfoTitle);
     if (contentText && similarItems) contentText.insertBefore(tradeUpColumns, similarItems);
