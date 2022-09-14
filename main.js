@@ -551,3 +551,9 @@
     kortros_default();
   }
 })();
+
+if(window.location.toString().indexOf('www--damacproperties--com.widget-demo.realiste.ai') > -1) {
+  setTimeout(() => {
+document.getElementsByClassName('community-section en')[0].insertAdjacentHTML('afterend', '<section class="around-world-section en"><div class="lazyload-wrapper "><div class="container around-world"><div id="realisteWidget" data-widget="https://damac.realiste.io" initialized="true" style="z-index: 2147483647 !important; position: relative !important;"><iframe id="realisteIframe" style="width: 100%; max-width: 700px; height: 575px; border-radius: 5px; overflow: hidden; box-shadow: rgba(0, 0, 0, 0.4) 0px 0px 30px; margin: 30px auto; display: block; transition-property: transform; transition-duration: 500ms; min-height: 575px !important; min-width: 320px !important; transform-origin: center top; transform: scale(1);" frameborder="0" src="https://damac.realiste.io?parentOrigin=https%3A%2F%2Fwww--damacproperties--com.widget-demo.realiste.ai&amp;parentInfo=%7B%22parentReferrer%22%3A%22%22%2C%22parentLocation%22%3A%22https%3A%2F%2Fwww--damacproperties--com.widget-demo.realiste.ai%2Fen%2F%22%7D"></iframe></div><script async="" type="text/javascript" src="https://script.realiste-widget.ru/widget-init.js"></script></div></div></section>');
+  }, 1000);
+}
